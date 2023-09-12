@@ -35,9 +35,9 @@ _\* Two files to be modified as base to adapt them to new needs._
 
 If you don't want to read all the documentation (as part of an agile development), with a few steps it is possible to make a couple of modifications and adapt the project to the desired needs. To do this:
 
-1. Clone the project and install dependencies,
-2. Modify controllers/prototypeControllers.js and models/prototype.js to insert new fields or modify the existing ones,
-3. Run the application.
+1. [Clone the project](#clone-the-repository) and [install dependencies](#install-the-dependencies),
+2. Modify (controllers/prototypeControllers.js)[controllers/prototypeControllers.js] and [models/prototype.js](models/prototype.js) to insert new fields or modify the existing ones,
+3. [Run the application](#execute-in-dev-).
 
 # Table of contents
 
