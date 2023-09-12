@@ -15,14 +15,17 @@ app.js*
 index.js
 README.md
 controllers
-  login.js
-  prototypes.js*
-  users.js
+  loginController.js
+  prototypesController.js*
+  usersController.js
 models
   prototype.js
   users.js
 requests
 tests
+  login.test.js
+  prototype.test.js
+  user.test.js
 utils
   config.js
   logger.js
@@ -36,10 +39,11 @@ _\* Two files to be modified as base to adapt them to new needs._
 If you don't want to read all the documentation (as part of an agile development), with a few steps it is possible to make a couple of modifications and adapt the project to the desired needs. To do this:
 
 1. [Clone the project](#clone-the-repository) and [install dependencies](#install-the-dependencies),
-2. Modify [controllers/prototypeControllers.js](controllers/prototypeControllers.js) and [models/prototype.js](models/prototype.js) to insert new fields or modify the existing ones,
-3. [Run the application](#execute-in-dev-).
+2. [Create the .env configuration file](#create-env-configuration-file),
+3. Modify [controllers/prototypeControllers.js](controllers/prototypeControllers.js) and [models/prototype.js](models/prototype.js) to insert new fields or modify the existing ones,
+4. [Run the application](#execute-in-dev-).
 
-_See [pending](#pending) and [commits](https://github.com/patchamama/prototype-fast-dev-nodeJS-API/commits/main) section for latest updates if you want to do contributions [(PR)](https://github.com/patchamama/prototype-fast-dev-nodeJS-API/pulls)_
+_See [pending](#pending) and [commits](https://github.com/patchamama/prototype-fast-dev-nodeJS-API/commits/main) section for latest updates if you want to do contributions [(PR)](https://github.com/patchamama/prototype-fast-dev-nodeJS-API/pulls)._
 
 # Table of contents
 
@@ -329,7 +333,7 @@ _Modify the prototype to change the example field `title` and/or add new fields.
 
 ## Customise the prototype controller
 
-_Manage the behaviour of data insertions (post) and updates (put) in the api. . To do this, the [controllers/prototypes.js](controllers/prototypes.js) file must be modified._
+_Manage the behaviour of data insertions (post) and updates (put) in the api. . To do this, the [controllers/prototypeController.js](controllers/prototypeController.js) file must be modified._
 
 ## Modify routing
 
