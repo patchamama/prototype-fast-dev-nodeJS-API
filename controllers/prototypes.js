@@ -1,3 +1,6 @@
+// Desc: Controller for prototypes
+// Usage: const prototypesRouter = require('./controllers/prototypes')
+
 const router = require('express').Router()
 const Prototype = require('../models/prototype')
 const { userExtractor } = require('../utils/middleware')

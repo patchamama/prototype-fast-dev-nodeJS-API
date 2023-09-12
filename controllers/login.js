@@ -1,8 +1,12 @@
+// Desc: Login controller for the backend using JWT
+// Usage: const loginRouter = require('./controllers/login')
+
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 const loginRouter = require('express').Router()
 const User = require('../models/user')
 
+// Post a new user to the database
 loginRouter.post('/', async (request, response) => {
   const { username, password } = request.body
 
@@ -16,6 +20,7 @@ loginRouter.post('/', async (request, response) => {
     })
   }
 
+  // create a token for the user and send it back
   const userForToken = {
     username: user.username,
     id: user._id,

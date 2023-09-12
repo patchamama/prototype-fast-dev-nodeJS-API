@@ -1,12 +1,15 @@
-const jwt = require('jsonwebtoken')
+// middlewares for handling unknown endpoints, errors, and token extraction
 
+const jwt = require('jsonwebtoken')
 const User = require('../models/user')
 const logger = require('./logger')
 
+// unknown endpoint handler
 const unknownEndpoint = (request, response) => {
   response.status(404).send({ error: 'unknown endpoint' })
 }
 
+// error handler
 const errorHandler = (error, request, response, next) => {
   logger.error(error.message)
 
@@ -21,6 +24,7 @@ const errorHandler = (error, request, response, next) => {
   next(error)
 }
 
+// extract token from request
 const getTokenFrom = (request) => {
   const authorization = request.get('authorization')
   if (authorization && authorization.toLowerCase().startsWith('bearer ')) {
@@ -34,6 +38,7 @@ const tokenExtractor = (request, response, next) => {
   next()
 }
 
+// extract user from token  and add it to the request object
 const userExtractor = async (request, response, next) => {
   const token = getTokenFrom(request)
 

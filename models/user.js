@@ -1,6 +1,10 @@
+// Desc: User model for the database
+// Usage: const User = require('../models/user')
+
 const mongoose = require('mongoose')
 const uniqueValidator = require('mongoose-unique-validator')
 
+// Define the schema for the user model
 const userSchema = mongoose.Schema({
   username: {
     type: String,
@@ -11,6 +15,7 @@ const userSchema = mongoose.Schema({
   name: String,
   email: String,
   passwordHash: String,
+  // Add new fields here
   prototypes: [
     {
       type: mongoose.Schema.Types.ObjectId,
@@ -19,8 +24,10 @@ const userSchema = mongoose.Schema({
   ],
 })
 
+// Use the unique validator plugin
 userSchema.plugin(uniqueValidator)
 
+// Dont return the version field when converting from JSON
 userSchema.set('toJSON', {
   transform: (document, returnedObject) => {
     returnedObject.id = returnedObject._id.toString()
