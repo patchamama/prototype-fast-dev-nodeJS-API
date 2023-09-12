@@ -73,7 +73,35 @@ For example, when a user submits a registration form, the user controller handle
 
 ## Requests
 
+The "requests" directory contains files that define different HTTP request configurations. These files contain different types of requests, such as GET, POST, PUT, or DELETE.
+
 ## Tests
+
+The "tests" directory contains test suites and test cases used to verify the functionality and correctness of our Node.js application. Testing is a critical part of software development, and this directory is dedicated to organizing and running automated tests to ensure that our code behaves as expected.
+
+### Directory Structure
+
+- `user.test.js`: This file contains unit and integration tests for user-related functionality, such as user registration, login, profile updates, and user-specific actions.
+
+- `prototype.test.js`: Here, you'll find test cases for the prototype-related functionality, covering scenarios like creating, reading, updating, and deleting prototype entries.
+
+- `login.test.js`: This file includes tests for user authentication and login processes. It verifies that user login requests, credentials, and authentication tokens work correctly.
+
+_Additional test files: Depending on the complexity of the application and the number of components, you may find additional test files for other parts of the codebase._
+
+### Usage
+
+Tests are essential for maintaining code quality and ensuring that new changes do not introduce regressions or break existing functionality. We use testing frameworks like Jest to automate the testing process and provide clear pass/fail results.
+
+To run the tests, you can use the following command:
+
+```
+npm test
+```
+
+_This command will execute the test suites defined in the "tests" directory and provide detailed test reports, including any failing test cases._
+
+The tests use the `supertest` library to simulate HTTP requests to the login controller and Jest for assertions, and also are execute in a test database to ensure that the tests run in an isolated enviroment.
 
 ## Utils
 

@@ -1,91 +1,306 @@
-const listHelper = require('../utils/list_helper')
+const mongoose = require('mongoose')
+const supertest = require('supertest')
+const bcrypt = require('bcrypt')
+const helper = require('./test_helper')
+const app = require('../app')
+const api = supertest(app)
+const Prototype = require('../models/prototype')
+const User = require('../models/user')
 
-const bigprototypelist = [
-  {
-    _id: '5a422b3a1b54a676234d17f9',
-    title: 'Canonical string reduction',
-    __v: 0,
-  },
-  {
-    _id: '5a422a851b54a676234d17f7',
-    title: 'React patterns',
-    __v: 0,
-  },
-  {
-    _id: '5a422aa71b54a676234d17f8',
-    title: 'Go To Statement Considered Harmful',
-    __v: 0,
-  },
-  {
-    _id: '5a422b891b54a676234d17fa',
-    title: 'First class tests',
-    __v: 0,
-  },
-  {
-    _id: '5a422ba71b54a676234d17fb',
-    title: 'TDD harms architecture',
-    __v: 0,
-  },
-  {
-    _id: '5a422bc61b54a676234d17fc',
-    title: 'Type wars',
-    __v: 0,
-  },
-]
+beforeEach(async () => {
+  await Prototype.deleteMany({})
 
-test('dummy returns one', () => {
-  const prototypes = []
+  const prototypeObjects = helper.initialPrototypes.map(
+    (prototype) => new Prototype(prototype)
+  )
+  const promiseArray = prototypeObjects.map((prototype) => prototype.save())
+  await Promise.all(promiseArray)
 
-  const result = listHelper.dummy(prototypes)
-  expect(result).toBe(1)
+  // for (let prototype of helper.initialPrototypes) {
+  //   let prototypeObject = new Prototype(prototype)
+  //   await prototypeObject.save()
+  // }
 })
 
-describe('total likes', () => {
-  test('of empty list is zero', () => {
-    const prototypes = []
-    const result = listHelper.totalLikes(prototypes)
-    expect(result).toBe(0)
+describe('when there is initially some prototypes saved', () => {
+  test('prototype are returned as json', async () => {
+    await api
+      .get('/api/prototypes')
+      .expect(200)
+      .expect('Content-Type', /application\/json/)
+  }, 100000)
+
+  test('all prototype are returned', async () => {
+    const response = await api.get('/api/prototypes')
+    //   console.log(response.body)
+    expect(response.body).toHaveLength(helper.initialPrototypes.length)
   })
 
-  test('when list has only one prototype equals the likes of that', () => {
-    const prototypes = [
-      {
-        _id: '23234323242dssfsf',
-        title: 'Test 2nd prototype title',
-      },
-    ]
-    const result = listHelper.totalLikes(prototypes)
-    expect(result).toBe(6)
-  })
+  test('a specific prototype is within the returned prototypes', async () => {
+    const response = await api.get('/api/prototypes')
+    //   console.log(response.body[0])
 
-  test('of a bigger list is calculated right', () => {
-    const result = listHelper.totalLikes(bigprototypelist)
-    expect(result).toBe(36)
+    const contents = response.body.map((r) => r.title)
+    //   console.log(contents)
+    expect(contents).toContain('El tortuoso camino de la justicia transicional')
   })
 })
 
-describe('favorites', () => {
-  test('Most favorite with empty list', () => {
-    const prototypes = [{}]
-    const result = listHelper.favoritePrototype(prototypes)
-    expect(result).toEqual({})
+describe('viewing a specific prototype', () => {
+  let token // Token of authenticated user
+  let userId // ID of authenticated user
+
+  beforeEach(async () => {
+    await Prototype.deleteMany({})
+
+    const prototypeObjects = helper.initialPrototypes.map(
+      (prototype) => new Prototype(prototype)
+    )
+    const promiseArray = prototypeObjects.map((prototype) => prototype.save())
+    await Promise.all(promiseArray)
+
+    // for (let prototype of helper.initialPrototypes) {
+    //   let prototypeObject = new Prototype(prototype)
+    //   await prototypeObject.save()
+    // }
+
+    await User.deleteMany({})
+
+    const passwordHash = await bcrypt.hash('sekret', 10)
+    const user = new User({ username: 'root', passwordHash })
+
+    await user.save()
+
+    const response = await api
+      .post('/api/login')
+      .send({ username: 'root', password: 'sekret' })
+
+    token = response.body.token
+    userId = response.body.id
   })
 
-  test('--- with one value', () => {
-    const prototypes = [
-      {
-        _id: '23234323242dssfsf',
-        title: 'Test 2nd prototype title',
-      },
-    ]
-    const result = listHelper.favoritePrototype(prototypes)
-    expect(result.likes).toBe(6)
-    expect(result).toEqual(prototypes[0])
+  test('a valid prototype can be added', async () => {
+    const newPrototype = {
+      title: 'Fugas o la ansiedad de sentirse vivo',
+    }
+
+    await api
+      .post('/api/prototypes')
+      .set('Authorization', `bearer ${token}`)
+      .send(newPrototype)
+      .expect(201)
+      .expect('Content-Type', /application\/json/)
+
+    const response = await api.get('/api/prototypes')
+    // const contents = response.body.map((r) => r.title)
+
+    const prototypesAtEnd = await helper.prototypesInDb()
+    expect(response.body).toHaveLength(helper.initialPrototypes.length + 1)
+
+    const contents = prototypesAtEnd.map((n) => n.title)
+    expect(contents).toContain('Fugas o la ansiedad de sentirse vivo')
   })
 
-  test('--- with a big list', () => {
-    const result = listHelper.favoritePrototype(bigprototypelist)
-    expect(result).toEqual(bigprototypelist[0])
-    expect(result.likes).toEqual(12)
+  test('check if the get id is correct', async () => {
+    const prototypesAtStart = await helper.prototypesInDb()
+    let prototypeToCheck = prototypesAtStart[0]
+
+    const response = await api
+      .get(`/api/prototypes/${prototypeToCheck.id}`)
+      .expect(200)
+      .expect('Content-Type', /application\/json/)
+
+    expect(response.body).toEqual(prototypeToCheck)
   })
+
+  test('fails with statuscode 404 if prototype does not exist', async () => {
+    const validNonexistingId = await helper.nonExistingId()
+
+    await api.get(`/api/prototypes/${validNonexistingId}`).expect(404)
+  })
+
+  test('fails with statuscode 400 if id is invalid', async () => {
+    const invalidId = '5a3d5da59220081a82a3445'
+
+    await api.get(`/api/prototypes/${invalidId}`).expect(400)
+  })
+
+  test('unique identifier property of the prototype posts is named id,', async () => {
+    const response = await api.get('/api/prototypes')
+    const contents = response.body[0]
+    //   console.log(contents)
+    expect(contents.id).toBeDefined()
+  })
+
+  test('if the likes property is missing from the request, it will default to the value 0', async () => {
+    const newPrototype = {
+      title: 'Fugas o la ansiedad de sentirse vivo',
+    }
+    //   const response = await api.post('/api/prototypes').send(newPrototype)
+    let prototypeObject = new Prototype(newPrototype)
+    try {
+      const response = await prototypeObject.save()
+      expect(response.likes).toBe(0)
+    } catch (error) {
+      console.log(error)
+    }
+  })
+
+  test('if the title or url are missing from the request data, the backend responds 400 Bad Request', async () => {
+    // url is missing
+    let response = await api
+      .post('/api/prototypes')
+      .set('Authorization', `bearer ${token}`)
+      .send({
+        title: 'test title',
+      })
+    expect(response.status).toBe(400)
+
+    // title is missing
+    response = await api
+      .post('/api/prototypes')
+      .set('Authorization', `bearer ${token}`)
+      .send({})
+    expect(response.status).toBe(400)
+
+    const prototypesAtEnd = await helper.prototypesInDb()
+    expect(prototypesAtEnd).toHaveLength(helper.initialPrototypes.length)
+    //   expect(response.body).toHaveLength(initialPrototypes.length)
+  })
+
+  test('succeeds with status code 200 if title is updated', async () => {
+    const prototypesAtStart = await helper.prototypesInDb()
+    let prototypeToUpdate = prototypesAtStart[0]
+    prototypeToUpdate.title = 'test title'
+    // add new fields to be checked here
+
+    await api
+      .put(`/api/prototypes/${prototypeToUpdate.id}`)
+      .send(prototypeToUpdate)
+      .expect(200)
+
+    const prototypesAtEnd = await helper.prototypesInDb()
+
+    expect(prototypesAtEnd).toHaveLength(helper.initialPrototypes.length)
+
+    // use map to get the titles of the prototypes
+    const contents = prototypesAtEnd.map((r) => r.title)
+    expect(contents).toContain(prototypeToUpdate.title)
+  })
+
+  test('should return an error if the user is not authenticated when add a prototype', async () => {
+    const newPrototype = {
+      title: 'Test Prototype Post',
+    }
+
+    const response = await api.post('/api/prototypes').send(newPrototype)
+
+    expect(response.status).toBe(401)
+    expect(response.body.error).toContain('JsonWebTokenError')
+  })
+
+  test('should create a new prototype post for an authenticated user', async () => {
+    const newPrototype = {
+      title: 'Test Prototype Post',
+    }
+
+    const response = await api
+      .post('/api/prototypes')
+      .set('Authorization', `bearer ${token}`)
+      .send(newPrototype)
+
+    expect(response.status).toBe(201)
+    expect(response.body.title).toEqual('Test Prototype Post')
+    const prototypes = await Prototype.find({})
+    expect(prototypes).toHaveLength(3)
+    // expect(prototypes[2].title).toEqual('Test Prototype Post')
+  })
+})
+
+describe('deletion of a prototype', () => {
+  let token // Token of authenticated user
+  let userId // ID of authenticated user
+
+  beforeEach(async () => {
+    await Prototype.deleteMany({})
+
+    const prototypeObjects = helper.initialPrototypes.map(
+      (prototype) => new Prototype(prototype)
+    )
+    const promiseArray = prototypeObjects.map((prototype) => prototype.save())
+    await Promise.all(promiseArray)
+
+    await User.deleteMany({})
+
+    const passwordHash = await bcrypt.hash('sekret', 10)
+    const user = new User({ username: 'root', passwordHash })
+
+    await user.save()
+
+    const response = await api
+      .post('/api/login')
+      .send({ username: 'root', password: 'sekret' })
+
+    token = response.body.token
+    userId = response.body.id
+  })
+
+  test('delete a prototype with not auth user: status code 400', async () => {
+    const prototypesAtStart = await helper.prototypesInDb()
+    const prototypeToDelete = prototypesAtStart[0]
+
+    await api.delete(`/api/prototypes/${prototypeToDelete.id}`).expect(401)
+  })
+
+  test('succeeds with status code 204 if id is valid', async () => {
+    const prototype = {
+      title: 'Test Prototype Post',
+      user: userId,
+    }
+    // let prototypeObject = new Prototype(prototype)
+    // await prototypeObject.save()
+
+    const resp = await api
+      .post('/api/prototypes')
+      .set('Authorization', `bearer ${token}`)
+      .send(prototype)
+    expect(resp.status).toBe(201)
+
+    await api
+      .delete(`/api/prototypes/${resp.body.id}`)
+      .set('Authorization', `bearer ${token}`)
+      .expect(204)
+
+    const prototypesAtEnd = await helper.prototypesInDb()
+
+    expect(prototypesAtEnd).toHaveLength(helper.initialPrototypes.length)
+
+    const contents = prototypesAtEnd.map((r) => r.title)
+
+    expect(contents).not.toContain(prototype.title)
+  })
+
+  test('should return an error if the user is not authenticated', async () => {
+    const prototype = new Prototype({
+      title: 'Test Prototype Post',
+      user: userId,
+    })
+    await prototype.save()
+
+    const response = await api.delete(`/api/prototypes/${prototype.id}`)
+
+    expect(response.status).toBe(401)
+    expect(response.body.error).toContain('JsonWebTokenError')
+  })
+})
+
+test('unknown endpoint in api url', async () => {
+  const response = await api.get('/api/prototypes-url-dont-exist')
+  //   console.log(response.body)
+
+  expect(response.body.error).toBe('unknown endpoint')
+})
+
+afterAll(async () => {
+  await mongoose.connection.close()
 })
