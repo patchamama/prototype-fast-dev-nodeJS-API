@@ -73,7 +73,8 @@ router.delete('/:id', userExtractor, async (request, response) => {
   )
 
   await user.save()
-  await prototype.remove()
+  // await prototype.remove()
+  await Prototype.findByIdAndRemove(request.params.id)
 
   response.status(204).end()
 })

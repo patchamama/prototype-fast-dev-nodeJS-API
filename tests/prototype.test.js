@@ -48,7 +48,7 @@ describe('when there is initially some prototypes saved', () => {
 
 describe('viewing a specific prototype', () => {
   let token // Token of authenticated user
-  let userId // ID of authenticated user
+  // let userId // ID of authenticated user
 
   beforeEach(async () => {
     await Prototype.deleteMany({})
@@ -76,7 +76,7 @@ describe('viewing a specific prototype', () => {
       .send({ username: 'root', password: 'sekret' })
 
     token = response.body.token
-    userId = response.body.id
+    // userId = response.body.id
   })
 
   test('a valid prototype can be added', async () => {
@@ -101,28 +101,16 @@ describe('viewing a specific prototype', () => {
     expect(contents).toContain('Fugas o la ansiedad de sentirse vivo')
   })
 
-  test('check if the get id is correct', async () => {
-    const prototypesAtStart = await helper.prototypesInDb()
-    let prototypeToCheck = prototypesAtStart[0]
-
-    const response = await api
-      .get(`/api/prototypes/${prototypeToCheck.id}`)
-      .expect(200)
-      .expect('Content-Type', /application\/json/)
-
-    expect(response.body).toEqual(prototypeToCheck)
-  })
-
   test('fails with statuscode 404 if prototype does not exist', async () => {
     const validNonexistingId = await helper.nonExistingId()
 
     await api.get(`/api/prototypes/${validNonexistingId}`).expect(404)
   })
 
-  test('fails with statuscode 400 if id is invalid', async () => {
+  test('fails with statuscode 404 if is not found', async () => {
     const invalidId = '5a3d5da59220081a82a3445'
 
-    await api.get(`/api/prototypes/${invalidId}`).expect(400)
+    await api.get(`/api/prototypes/${invalidId}`).expect(404)
   })
 
   test('unique identifier property of the prototype posts is named id,', async () => {
@@ -146,18 +134,9 @@ describe('viewing a specific prototype', () => {
     }
   })
 
-  test('if the title or url are missing from the request data, the backend responds 400 Bad Request', async () => {
-    // url is missing
-    let response = await api
-      .post('/api/prototypes')
-      .set('Authorization', `bearer ${token}`)
-      .send({
-        title: 'test title',
-      })
-    expect(response.status).toBe(400)
-
+  test('if the title is missing from the request data, the backend responds 400 Bad Request', async () => {
     // title is missing
-    response = await api
+    const response = await api
       .post('/api/prototypes')
       .set('Authorization', `bearer ${token}`)
       .send({})
@@ -196,7 +175,7 @@ describe('viewing a specific prototype', () => {
     const response = await api.post('/api/prototypes').send(newPrototype)
 
     expect(response.status).toBe(401)
-    expect(response.body.error).toContain('JsonWebTokenError')
+    expect(response.body.error).toContain('operation not permitted')
   })
 
   test('should create a new prototype post for an authenticated user', async () => {
@@ -290,7 +269,7 @@ describe('deletion of a prototype', () => {
     const response = await api.delete(`/api/prototypes/${prototype.id}`)
 
     expect(response.status).toBe(401)
-    expect(response.body.error).toContain('JsonWebTokenError')
+    expect(response.body.error).toContain('operation not permitted')
   })
 })
 

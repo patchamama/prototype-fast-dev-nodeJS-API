@@ -1,19 +1,9 @@
 const supertest = require('supertest')
 const jwt = require('jsonwebtoken')
-const helper = require('./test_helper')
 const app = require('../app')
 const api = supertest(app)
 const bcrypt = require('bcrypt')
 const User = require('../models/user')
-
-// Helper function to generate a test token
-const generateTestToken = (user) => {
-  const userForToken = {
-    username: user.username,
-    id: user._id,
-  }
-  return jwt.sign(userForToken, process.env.SECRET)
-}
 
 describe('Login Controller Tests', () => {
   // Before each test, clear the user database
