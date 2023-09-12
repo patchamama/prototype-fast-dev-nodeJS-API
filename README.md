@@ -365,7 +365,9 @@ I would recommend (if you want to change to `blog` for example):
 - `Prototype` to `Blog`
 - `prototype` to `blog`
 
-## Perform CRUD operations on the new prototype
+## Perform CRUD operations after modified the prototype
+
+The file [requests/CRUD_prototypes.rest](requests/CRUD_prototypes.rest) can be used as a basis for performing CRUD operations on the modified model based on the controller operations (which must also be modified).
 
 # Testing
 
@@ -410,7 +412,7 @@ _The section of [deploying app to internet](https://fullstackopen.com/en/part3/d
 
 # Contribution
 
-If you wish to contribute or make changes to existing models or controllers, ensure you follow best data modeling practices and conduct thorough testing to ensure changes do not adversely affect other parts of the application.
+If you wish to contribute or make changes to existing models or controllers, ensure you follow best data modeling practices and conduct thorough testing to ensure changes do not adversely affect other parts of the application. You can apply for contributions to be accepted through the [(Pull requests)](https://github.com/patchamama/prototype-fast-dev-nodeJS-API/pulls).
 
 # Credits
 
