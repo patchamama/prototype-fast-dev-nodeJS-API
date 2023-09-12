@@ -19,7 +19,7 @@ const userSchema = mongoose.Schema({
   prototypes: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'Prototype',
+      ref: 'Prototype', // This is the name of the model to reference
     },
   ],
 })
@@ -28,6 +28,7 @@ const userSchema = mongoose.Schema({
 userSchema.plugin(uniqueValidator)
 
 // Dont return the version field when converting from JSON
+// and change the _id field to id
 userSchema.set('toJSON', {
   transform: (document, returnedObject) => {
     returnedObject.id = returnedObject._id.toString()

@@ -1,4 +1,4 @@
-const request = require('supertest')
+const supertest = require('supertest')
 const jwt = require('jsonwebtoken')
 const helper = require('./test_helper')
 const app = require('../app')

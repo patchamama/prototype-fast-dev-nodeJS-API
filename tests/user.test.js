@@ -27,7 +27,7 @@ describe('when there is initially one user in db', () => {
     await api
       .post('/api/users')
       .send(newUser)
-      .expect(200)
+      .expect(201)
       .expect('Content-Type', /application\/json/)
 
     const usersAtEnd = await helper.usersInDb()
@@ -52,7 +52,7 @@ describe('when there is initially one user in db', () => {
       .expect(400)
       .expect('Content-Type', /application\/json/)
 
-    expect(result.body.error).toContain('Username is already in use.')
+    expect(result.body.error).toContain('User validation failed')
 
     const usersAtEnd = await helper.usersInDb()
     expect(usersAtEnd).toHaveLength(usersAtStart.length)
@@ -67,7 +67,7 @@ describe('when there is initially one user in db', () => {
 
     const response = await api.post('/api/users').send(newUser)
     // console.log(response.body)
-    expect(response.status).toBe(200)
+    expect(response.status).toBe(201)
     expect(response.body.username).toEqual(newUser.username)
     expect(response.body.name).toEqual(newUser.name)
     // expect(response.body.passwordHash).not.toEqual(newUser.password)
@@ -88,7 +88,7 @@ describe('when there is initially one user in db', () => {
 
     expect(response.status).toBe(400)
     expect(response.body.error).toContain(
-      'Both username and password must be provided.'
+      'User validation failed: username: Path `username` is required.'
     )
   })
 
@@ -102,7 +102,7 @@ describe('when there is initially one user in db', () => {
 
     expect(response.status).toBe(400)
     expect(response.body.error).toContain(
-      'Both username and password must be provided.'
+      '`password` is shorter than the minimum allowed length (3)'
     )
   })
 
@@ -123,7 +123,7 @@ describe('when there is initially one user in db', () => {
     const response = await api.post('/api/users').send(newUser)
 
     expect(response.status).toBe(400)
-    expect(response.body.error).toContain('Username is already in use.')
+    expect(response.body.error).toContain('User validation failed')
   })
 
   test('should return an error if username or password is too short', async () => {
@@ -137,7 +137,7 @@ describe('when there is initially one user in db', () => {
 
     expect(response.status).toBe(400)
     expect(response.body.error).toContain(
-      'Username and password must be at least 3 characters long.'
+      '`password` is shorter than the minimum allowed length (3)'
     )
   })
 })
