@@ -5,6 +5,7 @@ const schema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  // Add new fields here
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
