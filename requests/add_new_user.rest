@@ -1,0 +1,26 @@
+POST http://localhost:3003/api/users
+Content-Type: application/json
+
+{
+  "username": "test",
+  "name": "Test User",
+  "password": "test",
+  "email": "myemail@email.com"
+}
+
+###
+POST http://localhost:3003/api/users
+Content-Type: application/json
+
+{
+  "username": "root",
+  "name": "Superuser",
+  "password": "test",
+  "email": "myemail@email.com"
+}
+
+###
+GET http://localhost:3003/api/users/
+
+###
+DELETE http://localhost:3003/api/users/64ff92f8606b58ca8a848d68
