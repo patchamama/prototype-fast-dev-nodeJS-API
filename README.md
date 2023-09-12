@@ -164,6 +164,8 @@ npm test
 
 _This command will execute the test suites defined in the "tests" directory and provide detailed test reports, including any failing test cases._
 
+![Tets results](docs/tests-results.png)
+
 The tests use the `supertest` library to simulate HTTP requests to the login controller and Jest for assertions, and also are execute in a test database to ensure that the tests run in an isolated enviroment.
 
 ## Utils
