@@ -31,6 +31,63 @@ utils
 
 _\* Two files to be modified as base to adapt them to new needs._
 
+# Quick summary and staging
+
+If you don't want to read all the documentation (as part of an agile development), with a few steps it is possible to make a couple of modifications and adapt the project to the desired needs. To do this:
+
+1. Clone the project and install dependencies,
+2. Modify controllers/prototypeControllers.js and models/prototype.js to insert new fields or modify the existing ones,
+3. Run the application.
+
+# Table of contents
+
+- [Prototype of nodeJS API (backend) to a fast develop](#prototype-of-nodejs-api--backend--to-a-fast-develop)
+- [Objective](#objective)
+- [App structure](#app-structure)
+- [Quick summary and staging](#quick-summary-and-staging)
+- [Features](#features)
+  - [Models](#models)
+    - [Directory Structure](#directory-structure)
+    - [Usage](#usage)
+  - [Controllers](#controllers)
+    - [Directory Structure](#directory-structure-1)
+    - [Usage](#usage-1)
+  - [Requests](#requests)
+  - [Tests](#tests)
+    - [Directory Structure](#directory-structure-2)
+    - [Usage](#usage-2)
+  - [Utils](#utils)
+    - [Directory Structure](#directory-structure-3)
+    - [Usage](#usage-3)
+- [Bugs](#bugs)
+- [Pending](#pending)
+- [Technologies Used](#technologies-used)
+  - [Languages](#languages)
+  - [Libraries and Frameworks](#libraries-and-frameworks)
+  - [Other Tools](#other-tools)
+- [Development](#development)
+  - [GitHub](#github)
+    - [Fork a repository](#fork-a-repository)
+    - [Clone the repository](#clone-the-repository)
+  - [Local computer](#local-computer)
+    - [Open the IDE of your preference in the terminal](#open-the-ide-of-your-preference-in-the-terminal)
+    - [Install the dependencies](#install-the-dependencies)
+    - [Create .env configuration file](#create-env-configuration-file)
+    - [Execute in Dev:](#execute-in-dev-)
+    - [Open the browser on the port 3003](#open-the-browser-on-the-port-3003)
+  - [Adding users](#adding-users)
+  - [Customise the prototype model](#customise-the-prototype-model)
+  - [Customise the prototype controller](#customise-the-prototype-controller)
+  - [Modify routing](#modify-routing)
+  - [Customise also file names](#customise-also-file-names)
+  - [Perform CRUD operations on the new prototype](#perform-crud-operations-on-the-new-prototype)
+- [Testing](#testing)
+- [Deploy](#deploy)
+- [Contribution](#contribution)
+- [Credits](#credits)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 # Features
 
 ## Models
@@ -107,7 +164,7 @@ The tests use the `supertest` library to simulate HTTP requests to the login con
 
 The "utils" directory contains utility functions and modules used throughout our Node.js application. Utility functions are helper functions or modules that encapsulate common or reusable logic, making code more modular, maintainable, and DRY (Don't Repeat Yourself).
 
-### Directory Structure
+### Directory Structure
 
 - `config.js`: This config file is used to configure various settings for your Node.js application, such as the port to run the server on, the MongoDB URI based on the environment (development or test), and a secret key for authentication. It loads environment variables from a .env file using the dotenv package and provides these values to the rest of your application as needed..
 
@@ -123,6 +180,8 @@ Utilities in this directory are designed to simplify common tasks and promote co
 # Bugs
 
 No errors have been found or reported.
+
+# Pending
 
 # Technologies Used
 
