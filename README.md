@@ -105,7 +105,24 @@ The tests use the `supertest` library to simulate HTTP requests to the login con
 
 ## Utils
 
+The "utils" directory contains utility functions and modules used throughout our Node.js application. Utility functions are helper functions or modules that encapsulate common or reusable logic, making code more modular, maintainable, and DRY (Don't Repeat Yourself).
+
+### Directory Structure
+
+- `config.js`: This config file is used to configure various settings for your Node.js application, such as the port to run the server on, the MongoDB URI based on the environment (development or test), and a secret key for authentication. It loads environment variables from a .env file using the dotenv package and provides these values to the rest of your application as needed..
+
+- `logger.js`: This file provides two functions, info and error, for logging information and errors respectively. It checks the NODE_ENV environment variable to determine whether to log messages. Messages are only logged if the environment is not set to 'test,' which is a common practice to prevent logging in test environments where you want to keep the output clean.
+
+- `middleware.js`: This middlewares.js file defines several middleware functions for your Node.js application, including handling unknown endpoints, error handling, token extraction, and user extraction from a JSON Web Token (JWT). These middlewares are used to enhance the functionality and security of your application.
+
+Additional utility files: Depending on the specific needs of your project, you may have additional utility files to assist with tasks such as data manipulation, file handling, or API integrations.
+
+### Usage
+Utilities in this directory are designed to simplify common tasks and promote code reusability. They can be imported and used in various parts of the application, including controllers, routes, and middleware.
+
 # Bugs
+
+No errors have been found or reported.
 
 # Technologies Used
 
@@ -135,7 +152,7 @@ _The version used in every library can be seen [here](package.json) in the packa
 ## Other Tools
 
 - [GitHub](https://github.com/) - Used to host and deploy the website as well as manage the project.
-- [render](https://render.com/) - Used to deploy the website
+- [Render](https://render.com/) - Used to deploy the website
 - [MongoDB](https://www.mongodb.com/) - An open-source database based in document
 
 # Development
@@ -190,6 +207,9 @@ _In this project `npm` has been used as package manager, but you are free to use
 
 ```
 npm install
+```
+
+```
 npm start
 ```
 
