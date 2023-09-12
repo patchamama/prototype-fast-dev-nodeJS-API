@@ -1,12 +1,12 @@
 # Prototype of nodeJS API (backend) to a fast develop
 
-_DRY (don't repeat yourself)_
+**DRY (don't repeat yourself)**
 
-Aiming to provide a project structure in nodeJS following good practices to achieve a fast development of an API to achieve its deploy.
+_Aiming to provide a project structure in nodeJS following good practices to achieve a fast development of an API to achieve its deploy._
 
 # Objective
 
-Inspired by the agile philosophy for rapid development and production, the following project wants to take a small step with several programmed functionalities to provide an API from a very basic model that can be modified and scaled quickly and that includes authentication with tokens, testing and requests (REST). These functionalities can save hours and money in the process of integrating libraries and their validation.
+Inspired by the [Agile philosophy](https://en.wikipedia.org/wiki/Agile_software_development) for rapid development and production of software, the following project wants to take a small step with several programmed functionalities to provide an API from a very basic model that can be modified and scaled quickly and that includes authentication with tokens, testing and requests (REST). These functionalities can save hours and money in the process of integrating libraries and their validation.
 
 # App structure
 
@@ -213,7 +213,7 @@ No errors have been found or reported.
 - [mongoose-unique-validator](https://github.com/blakehaswell/mongoose-unique-validator) is a plugin for Mongoose that provides additional validation for unique fields in MongoDB documents. It ensures that fields marked as unique are not duplicated in the database.
 - [jsonwebtoken](https://jwt.io/) JSON Web Tokens (JWT) is a compact, URL-safe means of representing claims to be transferred between two parties. In Node.js, the jsonwebtoken library is commonly used to create and verify JWTs for user authentication and authorization.
 
-### As a development dependency used
+### As a development dependency
 
 - [Nodemon](https://nodemon.io/) is a utility that monitors for changes in your Node.js applications and automatically restarts the server when changes are detected. It's commonly used during development to streamline the development process.
 - [ESLint](https://eslint.org/) is a popular linting tool for JavaScript that helps developers find and fix problems in their code. It enforces coding standards and best practices to ensure code quality.
@@ -426,6 +426,6 @@ If you wish to contribute or make changes to existing models or controllers, ens
 - [Best](https://dev.to/nermineslimane/always-separate-app-and-server-files--1nc7) [practices](https://nodejsbestpractices.com/sections/projectstructre/separateexpress) references.
 - Functional Javascript series on [YouTube](https://www.youtube.com/watch?v=BMUiFMZr7vk&list=PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-n84)
 
-### Content
+### The idea of the content
 
-The idea came to me while I was doing the [exercises](https://github.com/patchamama/fullstackopen-part4-bloglist) of the fourth module: `Testing Express servers, user administration` of the Full Stack open cours: Deep Dive Into Modern Web Development - https://fullstackopen.com/en/
+The idea came to me while I was doing the [exercises](https://github.com/patchamama/fullstackopen-part4-bloglist) of the fourth module: _Testing Express servers, user administration_ of the Full Stack open course: **_Deep Dive Into Modern Web Development_** - https://fullstackopen.com/en/
