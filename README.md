@@ -236,10 +236,10 @@ This site was made using [Visual Studio Code](https://code.visualstudio.com/) & 
 
 A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project. The steps are as follows:
 
-1. On GitHub.com navigate to the repository page.
-2. In the top-right corner of the page, click **Fork**.
+1. On [GitHub.com](https://github.com/patchamama/prototype-fast-dev-nodeJS-API) navigate to the repository page.
+2. In the top-right corner of the page, click [**Fork**](https://github.com/patchamama/prototype-fast-dev-nodeJS-API/fork).
 
-![GitHub Fork](docs/deploy/deploy-github-fork.png)
+![GitHub Fork](docs/deploy-github-fork.png)
 
 You can fork a repository to create a copy of the repository and make changes without affecting the upstream repository.
 
@@ -247,17 +247,17 @@ You can fork a repository to create a copy of the repository and make changes wi
 
 In GitHub, you have the option to create a local copy (clone) of your repository on your device's hard drive. The steps are as follows:
 
-1. On GitHub.com navigate to the repository page.
+1. On [GitHub.com](https://github.com/patchamama/prototype-fast-dev-nodeJS-API) navigate to the repository page.
 2. Locate the _Code_ tab and click on it.
 3. In the expanded window, click the two squares icon to copy the HTTPS link of the repository.
 
-![GitHub Clone](docs/deploy/deploy-github-clone.png)
+![GitHub Clone](docs/deploy-github-clone.png)
 
 _If you use a online dev IDE integrated in github as gitpod or codeanywhere, you can click on it and open the IDE to do changes_
 
 4. On your computer, open **Terminal**.
 5. Navigate to the directory of choice (`cd <path-of-dev>`).
-6. Type `git clone https://github.com/patchamama/`
+6. Type `git clone https://github.com/patchamama/prototype-fast-dev-nodeJS-API.git .`
 7. Press **Enter** and the local clone of the repository will be created in the selected directory.
 
 ## Local computer
@@ -400,6 +400,8 @@ After this, the app starts up in the Render. The dashboard tells us the app stat
 ![Render deploy runnint](docs/render-deploy-running.png)
 
 According to the [documentation](https://render.com/docs/deploys) every commit to GitHub should redeploy the app. For some reason this is not always working. Fortunately it is also possible to manually redeploy the app.
+
+\_Section of [deploying app to internet](https://fullstackopen.com/en/part3/deploying_app_to_internet) of [fullstackopen.com](fullstackopen.com) was used as base to generate this section.
 
 # Contribution
 
