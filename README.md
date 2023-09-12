@@ -205,18 +205,21 @@ No errors have been found or reported.
 
 - [Node.js](https://nodejs.org/) is a JavaScript runtime built on Chrome's V8 JavaScript engine. It allows you to run JavaScript code on the server side and is commonly used for building scalable network applications.
 - [Express.js](https://expressjs.com/) is a fast, unopinionated, and minimalist web framework for Node.js. It simplifies the process of building robust and scalable web applications and APIs.
-- [Nodemon](https://nodemon.io/) is a utility that monitors for changes in your Node.js applications and automatically restarts the server when changes are detected. It's commonly used during development to streamline the development process.
 - [CORS](https://expressjs.com/en/resources/middleware/cors.html) (Cross-Origin Resource Sharing) is a Node.js middleware that enables secure cross-origin communication in web applications. It allows you to define which domains are allowed to access your server resources.
 - [Mongoose](https://mongoosejs.com/) is an Object Data Modeling (ODM) library for MongoDB and Node.js. It simplifies the interaction with MongoDB databases by providing a schema-based solution for data modeling.
 - [dotenv](https://github.com/motdotla/dotenv) is a zero-dependency module that loads environment variables from a .env file into the process.env object. It's commonly used to manage configuration settings in Node.js applications.
-- [ESLint](https://eslint.org/) is a popular linting tool for JavaScript that helps developers find and fix problems in their code. It enforces coding standards and best practices to ensure code quality.
-- [Jest](https://jestjs.io/) is a JavaScript testing framework that makes it easy to write unit and integration tests for your code. It provides a simple and powerful API for testing JavaScript applications.
-- [cross-env](https://github.com/kentcdodds/cross-env) is a command-line tool that allows you to set environment variables in a cross-platform way. It's often used in npm scripts to ensure consistent behavior across different operating systems.
-- [Supertest](https://github.com/visionmedia/supertest) is a library for testing HTTP assertions in Node.js applications. It allows you to make HTTP requests and assert the responses to ensure that your API endpoints work as expected.
 - [express-async-errors](https://www.npmjs.com/package/express-async-errors) is a middleware for Express.js that simplifies error handling in asynchronous routes. It allows you to throw errors in asynchronous code, and it will automatically handle them and send an appropriate response.
 - [bcrypt](https://github.com/kelektiv/node.bcrypt.js) is a library for hashing passwords securely in Node.js. It uses the bcrypt hashing algorithm to store and verify password hashes, making it a common choice for user authentication.
 - [mongoose-unique-validator](https://github.com/blakehaswell/mongoose-unique-validator) is a plugin for Mongoose that provides additional validation for unique fields in MongoDB documents. It ensures that fields marked as unique are not duplicated in the database.
 - [jsonwebtoken](https://jwt.io/) JSON Web Tokens (JWT) is a compact, URL-safe means of representing claims to be transferred between two parties. In Node.js, the jsonwebtoken library is commonly used to create and verify JWTs for user authentication and authorization.
+
+### As a development dependency used
+
+- [Nodemon](https://nodemon.io/) is a utility that monitors for changes in your Node.js applications and automatically restarts the server when changes are detected. It's commonly used during development to streamline the development process.
+- [ESLint](https://eslint.org/) is a popular linting tool for JavaScript that helps developers find and fix problems in their code. It enforces coding standards and best practices to ensure code quality.
+- [Jest](https://jestjs.io/) is a JavaScript testing framework that makes it easy to write unit and integration tests for your code. It provides a simple and powerful API for testing JavaScript applications.
+- [cross-env](https://github.com/kentcdodds/cross-env) is a command-line tool that allows you to set environment variables in a cross-platform way. It's often used in npm scripts to ensure consistent behavior across different operating systems.
+- [Supertest](https://github.com/visionmedia/supertest) is a library for testing HTTP assertions in Node.js applications. It allows you to make HTTP requests and assert the responses to ensure that your API endpoints work as expected.
 
 _The version used in every library can be seen [here](package.json) in the package.json file._
 
@@ -311,7 +314,7 @@ npm run dev
 
 ## Adding users
 
-_You must install in vscode or another similar IDE the plugin: `REST Client` to be able to carry out these steps._
+_You must install in vscode or another similar IDE the plugin: [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) to be able to carry out these steps. [Here](https://fullstackopen.com/en/part3/node_js_and_express#the-visual-studio-code-rest-client) some instructions about how to use it_
 _Modify `requests\add_new_user.rest` to add the users you want. For instance (to add username `root` and `password` test):_
 
 <pre>
@@ -327,6 +330,8 @@ Content-Type: application/json
 </pre>
 
 _Above POST there should be a `send request` option that would allow you to execute the add action._
+
+Also is possible to use other REST client as [Postman](https://www.postman.com/) or [IntelliJ WebStorm HTTP Client](https://www.jetbrains.com/help/webstorm/http-client-in-product-code-editor.html).
 
 ## Customise the prototype model
 
@@ -401,7 +406,7 @@ After this, the app starts up in the Render. The dashboard tells us the app stat
 
 According to the [documentation](https://render.com/docs/deploys) every commit to GitHub should redeploy the app. For some reason this is not always working. Fortunately it is also possible to manually redeploy the app.
 
-\_Section of [deploying app to internet](https://fullstackopen.com/en/part3/deploying_app_to_internet) of [fullstackopen.com](fullstackopen.com) was used as base to generate this section.
+_The section of [deploying app to internet](https://fullstackopen.com/en/part3/deploying_app_to_internet) of [fullstackopen.com](fullstackopen.com) was used as base to generate this section._
 
 # Contribution
 
@@ -409,4 +414,18 @@ If you wish to contribute or make changes to existing models or controllers, ens
 
 # Credits
 
-- The idea came to me while I was doing the [exercises](https://github.com/patchamama/fullstackopen-part4-bloglist) of the fourth module: `Testing Express servers, user administration` of the Full Stack open cours: Deep Dive Into Modern Web Development - https://fullstackopen.com/en/
+- [MongoDB schema](http://mongoosejs.com/docs/guide.html) and [models](http://mongoosejs.com/docs/models.html)
+- [Mongo search query syntax](https://docs.mongodb.com/manual/reference/operator/)
+- How to format the objects returned by Mongoose: https://stackoverflow.com/questions/7034848/mongodb-output-id-instead-of-id
+- [Mongoose search methods](https://mongoosejs.com/docs/api/model.html)
+- [Mongoose validation](https://mongoosejs.com/docs/validation.html)
+- [Mongoose unique validator](https://github.com/blakehaswell/mongoose-unique-validator)
+- [Mongoose join with the populate method](http://mongoosejs.com/docs/populate.html)
+- [Express error handlers](https://expressjs.com/en/guide/error-handling.html)
+- [Express router reference](http://expressjs.com/en/api.html#router)
+- [Best](https://dev.to/nermineslimane/always-separate-app-and-server-files--1nc7) [practices](https://nodejsbestpractices.com/sections/projectstructre/separateexpress) references.
+- Functional Javascript series on [YouTube](https://www.youtube.com/watch?v=BMUiFMZr7vk&list=PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-n84)
+
+### Content
+
+The idea came to me while I was doing the [exercises](https://github.com/patchamama/fullstackopen-part4-bloglist) of the fourth module: `Testing Express servers, user administration` of the Full Stack open cours: Deep Dive Into Modern Web Development - https://fullstackopen.com/en/
