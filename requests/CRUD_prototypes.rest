@@ -14,10 +14,20 @@ Content-Type: application/json
 ###
 POST http://localhost:3003/api/prototypes
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvb3QiLCJpZCI6IjY0ZmVkMjkyM2EyMDYzZGIyYzAzYmJjNyIsImlhdCI6MTY5NDQzNjA3OSwiZXhwIjoxNjk0NDM5Njc5fQ.2ZC5N-rGD1twdlvQQ9oINHhJePWoKb8lduU0r7UH1xo
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvb3QiLCJpZCI6IjY0ZmY5NjUzNmU1NjFkOTg2MDkyYWY1ZiIsImlhdCI6MTY5NDQ3MjA2MX0.pcBkU-C2mopwEoBsqnsv6zl5bOLBCeJmfAZQ3_HHABw
 
 {
   "title": "Fugas o la ansiedad de sentirse vivo",
+  "userId": "64fed2923a2063db2c03bbc7"
+}
+
+###
+POST http://localhost:3003/api/prototypes
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvb3QiLCJpZCI6IjY0ZmY5NjUzNmU1NjFkOTg2MDkyYWY1ZiIsImlhdCI6MTY5NDQ3MjA2MX0.pcBkU-C2mopwEoBsqnsv6zl5bOLBCeJmfAZQ3_HHABw
+
+{
+  "title": "El nuevo ocaso",
   "userId": "64fed2923a2063db2c03bbc7"
 }
 
@@ -32,15 +42,6 @@ Content-Type: application/json
 
 {
   "title": "Test of blog title 2",
-  "userId": "64fed2923a2063db2c03bbc7"
-}
-
-###
-POST http://localhost:3003/api/prototypes
-Content-Type: application/json
-
-{
-  "title": "Fugas o la ansiedad de sentirse vivo",
   "userId": "64fed2923a2063db2c03bbc7"
 }
 

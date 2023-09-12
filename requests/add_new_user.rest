@@ -23,4 +23,4 @@ Content-Type: application/json
 GET http://localhost:3003/api/users/
 
 ###
-DELETE http://localhost:3003/api/users/64ff92f8606b58ca8a848d68
+DELETE http://localhost:3003/api/users/64ff96297079dd5a4d82316f

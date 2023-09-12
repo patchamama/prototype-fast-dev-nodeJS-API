@@ -19,12 +19,12 @@ controllers
   prototypesController.js*
   usersController.js
 models
-  prototype.js
+  prototype.js*
   users.js
 requests
 tests
   login.test.js
-  prototype.test.js
+  prototype.test.js*
   user.test.js
 utils
   config.js
@@ -32,7 +32,7 @@ utils
   middleware.js  
 </pre>
 
-_\* Two files to be modified as base to adapt them to new needs._
+_\* Files to be modified as base to adapt them to new needs._
 
 # Quick summary and staging
 
@@ -172,7 +172,7 @@ The "utils" directory contains utility functions and modules used throughout our
 
 ### Directory Structure
 
-- `config.js`: This config file is used to configure various settings for your Node.js application, such as the port to run the server on, the MongoDB URI based on the environment (development or test), and a secret key for authentication. It loads environment variables from a .env file using the dotenv package and provides these values to the rest of your application as needed..
+- `config.js`: This config file is used to configure various settings for your Node.js application, such as the port to run the server on, the MongoDB URI based on the environment (development or test), and a secret key for authentication. It loads environment variables from a .env file using the dotenv package and provides these values to the rest of your application as needed.
 
 - `logger.js`: This file provides two functions, info and error, for logging information and errors respectively. It checks the NODE_ENV environment variable to determine whether to log messages. Messages are only logged if the environment is not set to 'test,' which is a common practice to prevent logging in test environments where you want to keep the output clean.
 
@@ -180,7 +180,8 @@ The "utils" directory contains utility functions and modules used throughout our
 
 Additional utility files: Depending on the specific needs of your project, you may have additional utility files to assist with tasks such as data manipulation, file handling, or API integrations.
 
-### Usage
+### Usage
+
 Utilities in this directory are designed to simplify common tasks and promote code reusability. They can be imported and used in various parts of the application, including controllers, routes, and middleware.
 
 # Bugs
@@ -190,7 +191,7 @@ No errors have been found or reported.
 # Pending
 
 - Generate script (bash, sh) that automates the renaming of files and content to replace `prototype` with a new desired name in the model and controller, as well as the API URL (router).
-- Generate a frontend (react) that emulates the same functionalities as the Django REST Framework and facilitates the management of models and API behaviour from a web interface.
+- Generate a frontend (react) that emulates the same functionalities as the [Django REST Framework](https://www.django-rest-framework.org/) and facilitates the management of models and API behaviour from a web interface.
 - Generate a web interface in the frontend that facilitates the creation of models and controllers.
 - Add use of mongoDB and sqlite databases locally for development mode.
 
@@ -223,7 +224,7 @@ _The version used in every library can be seen [here](package.json) in the packa
 
 - [GitHub](https://github.com/) - Used to host and deploy the website as well as manage the project.
 - [Render](https://render.com/) - Used to deploy the website
-- [MongoDB](https://www.mongodb.com/) - An open-source database based in document
+- [MongoDB](https://www.mongodb.com/) - Used as database
 
 # Development
 
@@ -297,7 +298,7 @@ PORT=3003
 
 _You are free to register at [mongoDB Atlas](https://www.mongodb.com/atlas/database) and paste the login URL provided after creating the username and password._
 
-### Execute in Dev:
+### Execute in dev:
 
 ```
 npm run dev
@@ -333,7 +334,7 @@ _Modify the prototype to change the example field `title` and/or add new fields.
 
 ## Customise the prototype controller
 
-_Manage the behaviour of data insertions (post) and updates (put) in the api. . To do this, the [controllers/prototypeController.js](controllers/prototypeController.js) file must be modified._
+_Manage the behaviour of data insertions (post) and updates (put) in the api. To do this, the [controllers/prototypeController.js](controllers/prototypeController.js) file must be modified._
 
 ## Modify routing
 
@@ -354,7 +355,7 @@ _If you do not want to use the word `prototypes` in the name of files (model, co
 I would recommend (if you want to change to `blog` for example):
 
 1. Change the file names to a single new desired name, e.g. blog.
-2. Open all files and replace (it is casesensitive):
+2. Open all files and replace the content (it is _casesensitive_):
 
 - `Prototype` to `Blog`
 - `prototype` to `blog`
@@ -363,11 +364,42 @@ I would recommend (if you want to change to `blog` for example):
 
 # Testing
 
+In the [tests](tests) folder there are several `tests` that can be run automatically with the following command:
+
 ```
 npm test
 ```
 
+Note that you will have to modify the tests in `prototype.test.js` to adapt them to the new modifications made.
+
 # Deploy
+
+At the moment as Render can be used without a credit card was selected. Render might be a bit easier to use since it does not require any software to be installed on your machine.
+
+The following assumes that the [sign in](https://dashboard.render.com/) has been made with a GitHub account.
+
+After signing in, let us create a new "web service":
+
+![Render new service](docs/render_new.png)
+
+The app repository is then connected to Render:
+
+![Render select github](docs/render-select-github.png)
+![Render select repository](docs/render-select-repo.png)
+
+The connecting seem to require that the app repository is public.
+
+Next we will define the basic configurations. If the app is _not_ at the root of the repository the _Root directory_ needs to be given a proper value:
+
+![Render configuration](docs/render-config.png)
+
+Select `Create webservice`
+
+After this, the app starts up in the Render. The dashboard tells us the app state and the url where the app is running:
+
+![Render deploy runnint](docs/render-deploy-running.png)
+
+According to the [documentation](https://render.com/docs/deploys) every commit to GitHub should redeploy the app. For some reason this is not always working. Fortunately it is also possible to manually redeploy the app.
 
 # Contribution
 

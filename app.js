@@ -11,9 +11,9 @@ const mongoose = require('mongoose')
 require('express-async-errors')
 
 // controllers
-const prototypesRouter = require('./controllers/prototypes')
-const usersRouter = require('./controllers/users')
-const loginRouter = require('./controllers/login')
+const prototypesRouter = require('./controllers/prototypeController')
+const usersRouter = require('./controllers/userController')
+const loginRouter = require('./controllers/loginController')
 
 // mongoose set strictQuery to false to allow for querying by id
 mongoose.set('strictQuery', false)
