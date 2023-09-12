@@ -35,6 +35,14 @@ _\* Two files to be modified as base to adapt them to new needs._
 
 ## Models
 
+This directory contains the database models used in our Node.js application. Models represent the structure and relationships of data in the database and are used in conjunction with the database management system (e.g., MongoDB or Mongoose) to perform CRUD (Create, Read, Update, Delete) operations on the data.
+
+### Directory Structure
+
+`user.js`: This file defines the user model, which stores information about users in our application, such as usernames, hashed passwords, and other user-related information.
+
+`prototype.js`: Here, the prototype model is defined, representing prototype entries in our application. Each prototype entry has properties such as title and can be added other fields as author, URL.
+
 ## Controllers
 
 ## Requests
