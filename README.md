@@ -36,8 +36,10 @@ _\* Two files to be modified as base to adapt them to new needs._
 If you don't want to read all the documentation (as part of an agile development), with a few steps it is possible to make a couple of modifications and adapt the project to the desired needs. To do this:
 
 1. [Clone the project](#clone-the-repository) and [install dependencies](#install-the-dependencies),
-2. Modify (controllers/prototypeControllers.js)[controllers/prototypeControllers.js] and [models/prototype.js](models/prototype.js) to insert new fields or modify the existing ones,
+2. Modify [controllers/prototypeControllers.js](controllers/prototypeControllers.js) and [models/prototype.js](models/prototype.js) to insert new fields or modify the existing ones,
 3. [Run the application](#execute-in-dev-).
+
+_See [pending](#pending) and [commits](https://github.com/patchamama/prototype-fast-dev-nodeJS-API/commits/main) section for latest updates if you want to do contributions [(PR)](https://github.com/patchamama/prototype-fast-dev-nodeJS-API/pulls)_
 
 # Table of contents
 
@@ -182,6 +184,11 @@ Utilities in this directory are designed to simplify common tasks and promote co
 No errors have been found or reported.
 
 # Pending
+
+- Generate script (bash, sh) that automates the renaming of files and content to replace `prototype` with a new desired name in the model and controller, as well as the API URL (router).
+- Generate a frontend (react) that emulates the same functionalities as the Django REST Framework and facilitates the management of models and API behaviour from a web interface.
+- Generate a web interface in the frontend that facilitates the creation of models and controllers.
+- Add use of mongoDB and sqlite databases locally for development mode.
 
 # Technologies Used
 
