@@ -39,11 +39,37 @@ This directory contains the database models used in our Node.js application. Mod
 
 ### Directory Structure
 
-`user.js`: This file defines the user model, which stores information about users in our application, such as usernames, hashed passwords, and other user-related information.
+- `user.js`: This file defines the user model, which stores information about users in our application, such as usernames, hashed passwords, and other user-related information.
 
-`prototype.js`: Here, the prototype model is defined, representing prototype entries in our application. Each prototype entry has properties such as title and can be added other fields as author, URL.
+- `prototype.js`: Here, the prototype model is defined, representing prototype entries in our application. Each prototype entry has properties such as title and can be added other fields as author, URL.
+
+### Usage
+
+These models are used in other parts of the application, such as controllers and routes, to interact with the database. For example, when creating a new user or retrieving a list of blog entries, the corresponding models are used to perform queries and updates in the database.
+
+Ensure that the models are properly configured, and the relationships between them are defined according to the needs of your application.
 
 ## Controllers
+
+The "controllers" directory contains the controller functions responsible for handling requests, processing data, and managing the interaction with the database in our Node.js application. Controllers act as intermediaries between the routes and the models, implementing the application's logic and business rules.
+
+### Directory Structure
+
+- `userController.js`: This file contains controller functions related to user management, such as user registration, login, profile updates, and user-specific actions.
+
+- `prototypeController.js`: Here, you'll find controller functions for managing prototype posts, including creating, reading, updating, and deleting prototype entries.
+
+- `loginController.js`: This file houses controller functions responsible for user authentication and login processes. It handles user login requests, verifies user credentials, and issues authentication tokens when users successfully log in.
+
+These controllers collectively manage different aspects of our application, ensuring that user-related actions, blog post operations, and authentication processes are handled efficiently and in accordance with our business logic.
+
+If you'd like to contribute or make enhancements to any of these controllers, please ensure that your changes align with the application's business logic and follow best practices for structuring controller functions.
+
+### Usage
+
+Controllers play a crucial role in processing incoming HTTP requests, validating data, and invoking the appropriate model methods to interact with the database. They are designed to keep the route handlers clean and focused on routing, while business logic and data operations are encapsulated within the controllers.
+
+For example, when a user submits a registration form, the user controller handles the validation of user data, hashes the password, and saves the user information to the database using the user model.
 
 ## Requests
 
@@ -224,6 +250,10 @@ npm test
 ```
 
 # Deploy
+
+# Contribution
+
+If you wish to contribute or make changes to existing models or controllers, ensure you follow best data modeling practices and conduct thorough testing to ensure changes do not adversely affect other parts of the application.
 
 # Credits
 
