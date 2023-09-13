@@ -80,7 +80,7 @@ index.js
 README.md
 controllers
   loginController.js
-  prototypesController.js*
+  prototypeController.js*
   usersController.js
 models
   prototype.js*
@@ -277,6 +277,78 @@ _If you use a online dev IDE integrated in github as gitpod or codeanywhere, you
 ## Local computer
 
 _(if you prefere a online IDE as gitpod or codeanywhere you can open it and open the terminal included)_
+
+### Execute script to customize the app (optional)
+
+```
+node tools/update-script.js -r NEW_NAME
+```
+
+_This script replaces in the filename and in the content (controller, model, routing) the text `prototype` with the `NEW_NAME`, allowing a quick adaptation of the script to new needs._
+
+For example, if we specify in the `-r Blogs` parameter _(you can put Blogs, blogs, blog, or Blog that at the end will choose the name completely in lower case and singular: `blog` for the replacement)_:
+
+```
+node tools/update-script.js -r Blogs
+```
+
+This would create the folder with contents:
+
+<pre>
+Blogs 
+  app.js*
+  index.js
+  README.md
+  controllers
+    loginController.js
+    prototypeController.js > blogController.js
+    usersController.js
+  models
+    prototype.js >  blog.js
+    users.js
+  requests
+    login.rest
+    prototype.rest > blog.rest
+    user.rest
+  tests
+    login.test.js
+    prototype.test.js > blog.test.js
+    user.test.js
+  utils
+    config.js
+    logger.js
+    middleware.js  
+</pre>
+
+Additionally all references to `prototype` will be replaced by `blog`, for example in the app.js file:
+
+`const prototypesRouter = require('./controllers/prototypeController')`
+
+is replaced by
+
+`const blogsRouter = require('./controllers/blogController')`
+
+and
+
+`app.use('/api/prototypes', prototypesRouter)`
+
+is replaced by
+
+`app.use('/api/blogs', blogsRouter)`
+
+Then the `OUTPUT_NEU_NAME` folder will be created, and following the example would be `OUTPUT_Blogs`, and we can proceed to install the dependencies and run the application in this folder:
+
+```
+cd OUTPUT_Blogs
+npm install
+npm run dev
+```
+
+and then we can open the browser in the new path to access the API:
+
+http://localhost:3003/api/blogs
+
+http://localhost:3003/api/users
 
 ### Open the IDE of your preference in the terminal
 
