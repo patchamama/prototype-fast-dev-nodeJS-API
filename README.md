@@ -198,7 +198,7 @@ No errors have been found or reported.
 
 - Add use of mongoDB and sqlite databases locally for development mode.
 - Generate script (bash, sh) that automates the renaming of files and content to replace `prototype` with a new desired name in the model and controller, as well as the API URL (router).
-- Generate a frontend (react) that emulates the same functionalities as the [Django REST Framework](https://www.django-rest-framework.org/) and facilitates the management of models and API behaviour from a web interface.
+- Generate a admin panel with a frontend (as react) that emulates the same functionalities as the [Django REST Framework](https://www.django-rest-framework.org/) and facilitates the management of models and API behaviour from a web interface.
 - Generate a web interface in the frontend that facilitates the creation of models and controllers.
 
 # Technologies Used
