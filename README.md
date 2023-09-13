@@ -371,6 +371,8 @@ I would recommend (if you want to change to `blog` for example):
 
 The file [requests/CRUD_prototypes.rest](requests/CRUD_prototypes.rest) can be used as a basis for performing CRUD operations on the modified model based on the controller operations (which must also be modified).
 
+_About the use of .rest files and REST Clients, the follow [section](https://github.com/patchamama/prototype-fast-dev-nodeJS-API#adding-users) can help._
+
 # Testing
 
 In the [tests](tests) folder there are several `tests` that can be run automatically with the following command:
