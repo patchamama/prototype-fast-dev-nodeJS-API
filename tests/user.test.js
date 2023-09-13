@@ -163,8 +163,8 @@ describe('when there is initially one user in db', () => {
         email: 'new@email.com',
       })
 
-    console.log(`User: /api/users/${userId}`)
-    console.log(`Token: ${token}`)
+    // console.log(`User: /api/users/${userId}`)
+    // console.log(`Token: ${token}`)
     // Verify that the response is successful and has the new username
     expect(response.status).toBe(200)
     expect(response.body.name).toBe('newname')

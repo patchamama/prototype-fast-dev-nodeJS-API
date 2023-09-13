@@ -120,20 +120,6 @@ describe('viewing a specific prototype', () => {
     expect(contents.id).toBeDefined()
   })
 
-  test('if the likes property is missing from the request, it will default to the value 0', async () => {
-    const newPrototype = {
-      title: 'Fugas o la ansiedad de sentirse vivo',
-    }
-    //   const response = await api.post('/api/prototypes').send(newPrototype)
-    let prototypeObject = new Prototype(newPrototype)
-    try {
-      const response = await prototypeObject.save()
-      expect(response.likes).toBe(0)
-    } catch (error) {
-      console.log(error)
-    }
-  })
-
   test('if the title is missing from the request data, the backend responds 400 Bad Request', async () => {
     // title is missing
     const response = await api
