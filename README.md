@@ -4,6 +4,8 @@
 
 _Aiming to provide a project structure in nodeJS following good practices to achieve a fast development of an API to achieve its deploy._
 
+The live API link can be found, to users [here](https://prototype-fast-dev-nodejs-api-example.onrender.com/api/users) and prototypes [here](https://prototype-fast-dev-nodejs-api-example.onrender.com/api/prototypes)
+
 # Objective
 
 Inspired by the [Agile philosophy](https://en.wikipedia.org/wiki/Agile_software_development) for rapid development and production of software, the following project wants to take a small step with several programmed functionalities to provide an API from a very basic model that can be modified and scaled quickly and that includes authentication with tokens, testing and requests (REST). These functionalities can save hours and money in the process of integrating libraries and their validation.
@@ -18,32 +20,6 @@ If you don't want to read all the documentation (as part of an agile development
 4. [Run the application](#execute-in-dev-).
 
 _See [pending](#pending) and [commits](https://github.com/patchamama/prototype-fast-dev-nodeJS-API/commits/main) section for latest updates if you want to do contributions [(PR)](https://github.com/patchamama/prototype-fast-dev-nodeJS-API/pulls)._
-
-# App structure
-
-<pre>
-app.js*
-index.js
-README.md
-controllers
-  loginController.js
-  prototypesController.js*
-  usersController.js
-models
-  prototype.js*
-  users.js
-requests
-tests
-  login.test.js
-  prototype.test.js*
-  user.test.js
-utils
-  config.js
-  logger.js
-  middleware.js  
-</pre>
-
-_\* Files to be modified as base to adapt them to new needs._
 
 # Table of contents
 
@@ -95,6 +71,32 @@ _\* Files to be modified as base to adapt them to new needs._
   - [The idea of the content](#the-idea-of-the-content)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+# App structure
+
+<pre>
+app.js*
+index.js
+README.md
+controllers
+  loginController.js
+  prototypesController.js*
+  usersController.js
+models
+  prototype.js*
+  users.js
+requests
+tests
+  login.test.js
+  prototype.test.js*
+  user.test.js
+utils
+  config.js
+  logger.js
+  middleware.js  
+</pre>
+
+_\* Files to be modified as base to adapt them to new needs._
 
 # Features
 
@@ -194,10 +196,10 @@ No errors have been found or reported.
 
 # Pending
 
+- Add use of mongoDB and sqlite databases locally for development mode.
 - Generate script (bash, sh) that automates the renaming of files and content to replace `prototype` with a new desired name in the model and controller, as well as the API URL (router).
 - Generate a frontend (react) that emulates the same functionalities as the [Django REST Framework](https://www.django-rest-framework.org/) and facilitates the management of models and API behaviour from a web interface.
 - Generate a web interface in the frontend that facilitates the creation of models and controllers.
-- Add use of mongoDB and sqlite databases locally for development mode.
 
 # Technologies Used
 
@@ -407,6 +409,10 @@ Next we will define the basic configurations. If the app is _not_ at the root of
 ![Render configuration](docs/render-config.png)
 
 Select `Create webservice`
+
+Configurate the enviroment with the keys parameters (see the .env file) to define de database conection and secret key.
+
+![Render enviroment](docs/render-enviroment.png)
 
 After this, the app starts up in the Render. The dashboard tells us the app state and the url where the app is running:
 
