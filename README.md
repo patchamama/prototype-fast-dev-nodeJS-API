@@ -8,6 +8,17 @@ _Aiming to provide a project structure in nodeJS following good practices to ach
 
 Inspired by the [Agile philosophy](https://en.wikipedia.org/wiki/Agile_software_development) for rapid development and production of software, the following project wants to take a small step with several programmed functionalities to provide an API from a very basic model that can be modified and scaled quickly and that includes authentication with tokens, testing and requests (REST). These functionalities can save hours and money in the process of integrating libraries and their validation.
 
+# Quick summary and staging
+
+If you don't want to read all the documentation (as part of an agile development), with a few steps it is possible to make a couple of modifications and adapt the project to the desired needs. To do this:
+
+1. [Clone the project](#clone-the-repository) and [install dependencies](#install-the-dependencies),
+2. [Create the .env configuration file](#create-env-configuration-file),
+3. Modify [controllers/prototypeControllers.js](controllers/prototypeControllers.js) and [models/prototype.js](models/prototype.js) to insert new fields or modify the existing ones,
+4. [Run the application](#execute-in-dev-).
+
+_See [pending](#pending) and [commits](https://github.com/patchamama/prototype-fast-dev-nodeJS-API/commits/main) section for latest updates if you want to do contributions [(PR)](https://github.com/patchamama/prototype-fast-dev-nodeJS-API/pulls)._
+
 # App structure
 
 <pre>
@@ -34,23 +45,12 @@ utils
 
 _\* Files to be modified as base to adapt them to new needs._
 
-# Quick summary and staging
-
-If you don't want to read all the documentation (as part of an agile development), with a few steps it is possible to make a couple of modifications and adapt the project to the desired needs. To do this:
-
-1. [Clone the project](#clone-the-repository) and [install dependencies](#install-the-dependencies),
-2. [Create the .env configuration file](#create-env-configuration-file),
-3. Modify [controllers/prototypeControllers.js](controllers/prototypeControllers.js) and [models/prototype.js](models/prototype.js) to insert new fields or modify the existing ones,
-4. [Run the application](#execute-in-dev-).
-
-_See [pending](#pending) and [commits](https://github.com/patchamama/prototype-fast-dev-nodeJS-API/commits/main) section for latest updates if you want to do contributions [(PR)](https://github.com/patchamama/prototype-fast-dev-nodeJS-API/pulls)._
-
 # Table of contents
 
 - [Prototype of nodeJS API (backend) to a fast develop](#prototype-of-nodejs-api--backend--to-a-fast-develop)
 - [Objective](#objective)
-- [App structure](#app-structure)
 - [Quick summary and staging](#quick-summary-and-staging)
+- [App structure](#app-structure)
 - [Features](#features)
   - [Models](#models)
     - [Directory Structure](#directory-structure)
@@ -70,6 +70,7 @@ _See [pending](#pending) and [commits](https://github.com/patchamama/prototype-f
 - [Technologies Used](#technologies-used)
   - [Languages](#languages)
   - [Libraries and Frameworks](#libraries-and-frameworks)
+    - [As a development dependency](#as-a-development-dependency)
   - [Other Tools](#other-tools)
 - [Development](#development)
   - [GitHub](#github)
@@ -79,18 +80,19 @@ _See [pending](#pending) and [commits](https://github.com/patchamama/prototype-f
     - [Open the IDE of your preference in the terminal](#open-the-ide-of-your-preference-in-the-terminal)
     - [Install the dependencies](#install-the-dependencies)
     - [Create .env configuration file](#create-env-configuration-file)
-    - [Execute in Dev:](#execute-in-dev-)
+    - [Execute in dev:](#execute-in-dev-)
     - [Open the browser on the port 3003](#open-the-browser-on-the-port-3003)
   - [Adding users](#adding-users)
   - [Customise the prototype model](#customise-the-prototype-model)
   - [Customise the prototype controller](#customise-the-prototype-controller)
   - [Modify routing](#modify-routing)
   - [Customise also file names](#customise-also-file-names)
-  - [Perform CRUD operations on the new prototype](#perform-crud-operations-on-the-new-prototype)
+  - [Perform CRUD operations after modified the prototype](#perform-crud-operations-after-modified-the-prototype)
 - [Testing](#testing)
 - [Deploy](#deploy)
 - [Contribution](#contribution)
 - [Credits](#credits)
+  - [The idea of the content](#the-idea-of-the-content)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
