@@ -4,8 +4,12 @@ const app = require('../app')
 const api = supertest(app)
 const bcrypt = require('bcrypt')
 const User = require('../models/user')
+const { tokenExtractor } = require('../utils/middleware')
 
 describe('when there is initially one user in db', () => {
+  let token // Token of authenticated user
+  let userId // ID of authenticated user
+
   beforeEach(async () => {
     await User.deleteMany({})
 
@@ -13,6 +17,13 @@ describe('when there is initially one user in db', () => {
     const user = new User({ username: 'root', passwordHash })
 
     await user.save()
+
+    const response = await api
+      .post('/api/login')
+      .send({ username: 'root', password: 'sekret' })
+
+    token = response.body.token
+    userId = response.body.id
   })
 
   test('creation succeeds with a fresh username', async () => {
@@ -139,5 +150,30 @@ describe('when there is initially one user in db', () => {
     expect(response.body.error).toContain(
       '`password` is shorter than the minimum allowed length (3)'
     )
+  })
+
+  test('should update user data', async () => {
+    // Make a PUT request to update a user's data
+    const response = await api
+      .put(`/api/users/${userId}`)
+      .set('Authorization', `bearer ${token}`) // Set the Authorization header
+      .send({
+        username: 'root',
+        name: 'newname',
+        password: 'sekret',
+        email: 'new@email.com',
+      })
+
+    console.log(`User: /api/users/${userId}`)
+    console.log(`Token: ${token}`)
+    // Verify that the response is successful and has the new username
+    expect(response.status).toBe(200)
+    expect(response.body.name).toBe('newname')
+  })
+
+  // Other user-related tests can go here
+
+  afterAll(() => {
+    // Perform any necessary cleanup after the tests, such as closing database connections if needed
   })
 })
