@@ -53,8 +53,14 @@ _See [pending](#pending) and [commits](https://github.com/patchamama/prototype-f
     - [Fork a repository](#fork-a-repository)
     - [Clone the repository](#clone-the-repository)
   - [Local computer](#local-computer)
+    - [Execute script to customize the app (optional)](#execute-script-to-customize-the-app--optional-)
     - [Open the IDE of your preference in the terminal](#open-the-ide-of-your-preference-in-the-terminal)
     - [Install the dependencies](#install-the-dependencies)
+    - [Create and configure database](#create-and-configure-database)
+      - [MongoDB](#mongodb)
+        - [Local in the computer](#local-in-the-computer)
+        - [MongoDB atlas as remote](#mongodb-atlas-as-remote)
+      - [sqlite](#sqlite)
     - [Create .env configuration file](#create-env-configuration-file)
     - [Execute in dev:](#execute-in-dev-)
     - [Open the browser on the port 3003](#open-the-browser-on-the-port-3003)
@@ -69,6 +75,7 @@ _See [pending](#pending) and [commits](https://github.com/patchamama/prototype-f
 - [Contribution](#contribution)
 - [Credits](#credits)
   - [The idea of the content](#the-idea-of-the-content)
+  - [Posible alternatives](#posible-alternatives)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
