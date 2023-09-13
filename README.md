@@ -196,7 +196,7 @@ No errors have been found or reported.
 
 # Pending
 
-- Add use of mongoDB and sqlite databases locally for development mode.
+- Add use of ~~mongoDB~~ and sqlite databases locally for development mode.
 - Generate script (bash, sh) that automates the renaming of files and content to replace `prototype` with a new desired name in the model and controller, as well as the API URL (router).
 - Generate a admin panel with a frontend (as react) that emulates the same functionalities as the [Django REST Framework](https://www.django-rest-framework.org/) and facilitates the management of models and API behaviour from a web interface.
 - Generate a web interface in the frontend that facilitates the creation of models and controllers.
@@ -288,9 +288,6 @@ _In this project `npm` has been used as package manager, but you are free to use
 
 ```
 npm install
-```
-
-```
 npm start
 ```
 

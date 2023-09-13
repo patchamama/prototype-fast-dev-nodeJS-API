@@ -3,6 +3,7 @@
 
 const config = require('./utils/config')
 const express = require('express')
+const morgan = require('morgan')
 const app = express()
 const cors = require('cors')
 const logger = require('./utils/logger')
@@ -34,6 +35,12 @@ const middleware = require('./utils/middleware')
 
 // cors allows requests from other origins
 app.use(cors())
+
+// morgan logs requests to the console
+morgan.token('body', (req) => JSON.stringify(req.body))
+app.use(
+  morgan(':method :url :status :res[content-length] - :response-time ms :body')
+)
 
 // express.static serves the build folder
 // (as static files, like images or react code)
