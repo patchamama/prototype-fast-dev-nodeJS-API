@@ -293,6 +293,54 @@ npm install
 npm start
 ```
 
+### Create and configure database
+
+#### MongoDB
+
+##### Local in the computer
+
+##### MongoDB atlas as remote
+
+Loggin and create account of [MongoDB Atlas](https://www.mongodb.com/atlas/database)
+
+![Mongodb create](docs/mongodb-welcome.png)
+
+Once you've created and logged into your account of [MongoDB Atlas](https://www.mongodb.com/atlas/database), let us start by selecting the free option and pick the cloud provider and location and create the cluster:
+
+![Mongodb select free option](docs/mongodb-free.png)
+
+Let's wait for the cluster to be ready for use. This can take some minutes.
+
+NB do not continue before the cluster is ready.
+
+Let's use the _security_ tab for creating user credentials for the database. Please note that these are not the same credentials you use for logging into MongoDB Atlas. These will be used for your application to connect to the database.
+
+![Mongodb select security](docs/mongodb-security.png)
+
+Next, we have to define the IP addresses that are allowed access to the database, adding 0.0.0.0 as an IP allows access from anywhere as well.
+
+Finally, we are ready to connect to our database. Start by clicking connect:
+
+![Mongodb select ip](docs/mongodb-ip.png)
+
+and choose: _Drivers_ > _Connect your application_:
+
+![Mongodb connect](docs/mongodb-connect.png)
+
+The view displays the _MongoDB URI_, which is the address of the database that we will supply to the MongoDB client library we will add to our application.
+
+The address looks like this:
+
+```
+mongodb+srv://username:<password>@cluster0.kqnrdup.mongodb.net/?retryWrites=true&w=majority
+```
+
+We are now ready to use the database.
+
+#### sqlite
+
+_Section is pending_
+
 ### Create .env configuration file
 
 ```
