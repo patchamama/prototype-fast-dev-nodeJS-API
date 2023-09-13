@@ -200,6 +200,7 @@ No errors have been found or reported.
 - Generate script (bash, sh) that automates the renaming of files and content to replace `prototype` with a new desired name in the model and controller, as well as the API URL (router).
 - Generate a admin panel with a frontend (as react) that emulates the same functionalities as the [Django REST Framework](https://www.django-rest-framework.org/) and facilitates the management of models and API behaviour from a web interface.
 - Generate a web interface in the frontend that facilitates the creation of models and controllers.
+- Use morgan to extends the Express Rest API’s logging capabilities.
 
 # Technologies Used
 
@@ -299,6 +300,17 @@ npm start
 
 ##### Local in the computer
 
+To install mongoDB y the local computer. With windows the instruction are [here](https://www.mongodb.com/try/download/community) and to mac I will use [Homebrew](https://brew.sh/):
+
+```
+brew tap mongodb/brew
+brew install mongodb-community
+```
+
+Finally, type `brew services start mongodb-community` into your terminal. This is what actually starts up the Mongo server. **You’ll need to have the Mongo server running any time you want to interact with your database, view your myFlix app, or use the Mongo shell**.
+
+To stop running the Mongo server, enter the command `brew services stop mongodb-community` in your terminal.
+
 ##### MongoDB atlas as remote
 
 Loggin and create account of [MongoDB Atlas](https://www.mongodb.com/atlas/database)
@@ -344,9 +356,9 @@ _Section is pending_
 ### Create .env configuration file
 
 ```
-MONGODB_URI='mongodb+srv://username:password@url.mongodb.net/prototype?retryWrites=true&w=majority'
+MONGODB_URI='mongodb://localhost/prototype=test'
 
-TEST_MONGODB_URI='mongodb+srv://username:password@url.mongodb.net/test-prototype?retryWrites=true&w=majority'
+TEST_MONGODB_URI='mongodb://localhost/test-prototype=test'
 
 SECRET='your-secret-key-for-testing-purposes-only'
 
@@ -369,7 +381,7 @@ npm run dev
 ## Adding users
 
 _You must install in vscode or another similar IDE the plugin: [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) to be able to carry out these steps. [Here](https://fullstackopen.com/en/part3/node_js_and_express#the-visual-studio-code-rest-client) some instructions about how to use it_
-_Modify `requests\add_new_user.rest` to add the users you want. For instance (to add username `root` and `password` test):_
+_Modify `requests\user.rest` to add the users you want. For instance (to add username `root` and `password` test):_
 
 <pre>
 POST http://localhost:3003/api/users
@@ -421,7 +433,7 @@ I would recommend (if you want to change to `blog` for example):
 
 ## Perform CRUD operations after modified the prototype
 
-The file [requests/CRUD_prototypes.rest](requests/CRUD_prototypes.rest) can be used as a basis for performing CRUD operations on the modified model based on the controller operations (which must also be modified).
+The file [requests/prototype.rest](requests/prototype.rest) can be used as a basis for performing CRUD operations on the modified model based on the controller operations (which must also be modified).
 
 _About the use of .rest files and REST Clients, the follow [section](https://github.com/patchamama/prototype-fast-dev-nodeJS-API#adding-users) can help._
 

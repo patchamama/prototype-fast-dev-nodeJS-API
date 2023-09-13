@@ -4,7 +4,6 @@ const app = require('../app')
 const api = supertest(app)
 const bcrypt = require('bcrypt')
 const User = require('../models/user')
-const { tokenExtractor } = require('../utils/middleware')
 
 describe('when there is initially one user in db', () => {
   let token // Token of authenticated user
