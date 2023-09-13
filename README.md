@@ -485,9 +485,16 @@ If you wish to contribute or make changes to existing models or controllers, ens
 - [Mongoose join with the populate method](http://mongoosejs.com/docs/populate.html)
 - [Express error handlers](https://expressjs.com/en/guide/error-handling.html)
 - [Express router reference](http://expressjs.com/en/api.html#router)
+- [Express Admin](https://github.com/simov/express-admin) is a MySQL, MariaDB, PostgreSQL, SQLite admin panel for Node.js.
+- [AdminJS](https://github.com/SoftwareBrothers/adminjs) is an automatic admin interface that can be plugged into your application. You, as a developer, provide database models (like posts, comments, stores, products or whatever else your application uses), and AdminJS generates UI which allows you (or other trusted users) to manage content. Inspired by: django admin, rails admin and active admin.
 - [Best](https://dev.to/nermineslimane/always-separate-app-and-server-files--1nc7) [practices](https://nodejsbestpractices.com/sections/projectstructre/separateexpress) references.
 - Functional Javascript series on [YouTube](https://www.youtube.com/watch?v=BMUiFMZr7vk&list=PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-n84)
 
 ### The idea of the content
 
 The idea came to me while I was doing the [exercises](https://github.com/patchamama/fullstackopen-part4-bloglist) of the fourth module: _Testing Express servers, user administration_ of the Full Stack open course: **_Deep Dive Into Modern Web Development_** - https://fullstackopen.com/en/
+
+### Posible alternatives
+
+- [sailsjs.com](https://sailsjs.com/get-started): The MVC framework for Node.js Sails is the most popular MVC framework for Node.js, designed to emulate the familiar MVC pattern of frameworks like Ruby on Rails, but with support for the requirements of modern apps: data-driven APIs with a scalable, service-oriented architecture.
+- [CompoundJS](https://github.com/1602/compound) - MVC framework for NodeJS™. It allows you to build web application in minutes.
