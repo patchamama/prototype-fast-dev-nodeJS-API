@@ -206,11 +206,11 @@ No errors have been found or reported.
 
 # Pending
 
-- Add use of ~~mongoDB~~ and sqlite databases locally for development mode.
-- Generate script (bash and batch) that automates the renaming of files and content to replace `prototype` with a new desired name in the model and controller, as well as the API URL (router).
+- Add use of ~~[mongoDB](https://github.com/patchamama/prototype-fast-dev-nodeJS-API/commit/9a2baeacf56776e96bb8dcfec63fb3559fbcc89e)~~ and sqlite databases locally for development mode.
+- ~~Generate script (bash and batch) that automates the renaming of files and content to replace `prototype` with a new desired name in the model and controller, as well as the API URL (router).~~ See commit [here](https://github.com/patchamama/prototype-fast-dev-nodeJS-API/commit/5dd21676361876944e2d15bd7a503df0d26fb309)
 - Generate a admin panel with a frontend (react, vanillaJS, jquery) that emulates the same functionalities as the _[Django REST Framework](https://www.django-rest-framework.org/) API Control Panel_ and facilitates the management of models and API behaviour from a web interface.
 - Generate a web interface in the frontend that facilitates the creation of models and controllers.
-- ~~Use morgan to extends the Express Rest API’s logging capabilities.~~
+- ~~Use morgan to extends the Express Rest API’s logging capabilities.~~ See commit [here](https://github.com/patchamama/prototype-fast-dev-nodeJS-API/commit/eda4cf97c424863eff724de1823b545d7d8244af)
 
 # Technologies Used
 
