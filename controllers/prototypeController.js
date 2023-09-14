@@ -43,15 +43,15 @@ router.post('/', userExtractor, async (request, response) => {
 router.put('/:id', async (request, response) => {
   const body = request.body
 
-  const Prototype = await Prototype.findById(request.params.id)
-  if (Prototype) {
+  const prototype = await Prototype.findById(request.params.id)
+  if (prototype) {
     for (const key in body) {
-      Prototype[key] = body[key]
+      prototype[key] = body[key]
     }
 
     const updatedPrototype = await Prototype.findByIdAndUpdate(
       request.params.id,
-      Prototype,
+      prototype,
       {
         new: true,
       }
