@@ -108,9 +108,15 @@ describe('viewing a specific prototype', () => {
   })
 
   test('fails with statuscode 404 if is not found', async () => {
-    const invalidId = '5a3d5da59220081a82a3445'
+    const invalidId = '6501d908459ef53f046fe9e5'
 
     await api.get(`/api/prototypes/${invalidId}`).expect(404)
+  })
+
+  test('fails with statuscode 400, bad format of id', async () => {
+    const invalidId = '6501d908459ef53f04e5'
+
+    await api.get(`/api/prototypes/${invalidId}`).expect(400)
   })
 
   test('unique identifier property of the prototype posts is named id,', async () => {
