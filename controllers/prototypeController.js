@@ -40,20 +40,24 @@ router.post('/', userExtractor, async (request, response) => {
   response.status(201).json(createdPrototype)
 })
 
-// update a prototype
 router.put('/:id', async (request, response) => {
-  const { title } = request.body
+  const body = request.body
 
-  const updatedPrototype = await Prototype.findByIdAndUpdate(
-    request.params.id,
-    {
-      title,
-      // Add new fields to be updated here
-    },
-    { new: true }
-  )
+  const Prototype = await Prototype.findById(request.params.id)
+  if (Prototype) {
+    for (const key in body) {
+      Prototype[key] = body[key]
+    }
 
-  response.json(updatedPrototype)
+    const updatedPrototype = await Prototype.findByIdAndUpdate(
+      request.params.id,
+      Prototype,
+      {
+        new: true,
+      }
+    )
+    response.status(200).json(updatedPrototype)
+  }
 })
 
 // delete a prototype

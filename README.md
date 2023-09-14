@@ -445,7 +445,7 @@ SECRET='your-secret-key-for-testing-purposes-only'
 PORT=3003
 ```
 
-_You are free to register at [mongoDB Atlas](https://www.mongodb.com/atlas/database) and paste the login URL provided after creating the username and password._
+_You are free to register at [mongoDB Atlas](https://www.mongodb.com/atlas/database) and paste the login URL provided after creating the username and password is you want to use a remote access or to deploy._
 
 ### Execute in dev:
 
@@ -483,7 +483,7 @@ Also is possible to use other REST client as [Postman](https://www.postman.com/)
 
 _Modify the prototype to change the example field `title` and/or add new fields. To do this, the [models/prototype.js](models/prototype.js) file must be modified._
 
-## Customise the prototype controller
+## Customise the prototype controller (manual)
 
 _Manage the behaviour of data insertions (post) and updates (put) in the api. To do this, the [controllers/prototypeController.js](controllers/prototypeController.js) file must be modified._
 
