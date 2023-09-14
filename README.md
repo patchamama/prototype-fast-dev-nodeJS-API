@@ -174,7 +174,7 @@ Tests are essential for maintaining code quality and ensuring that new changes d
 
 To run the tests, you can use the following command:
 
-```
+```properties
 npm test
 ```
 
@@ -289,7 +289,7 @@ _(if you prefere a online IDE as gitpod or codeanywhere you can open it and open
 
 ### Execute script to customize the app (optional)
 
-```
+```properties
 node tools/update-script.js -r NEW_NAME
 ```
 
@@ -297,7 +297,7 @@ _This script replaces in the filename and in the content (controller, model, rou
 
 For example, if we specify in the `-r Blogs` parameter _(you can put Blogs, blogs, blog, or Blog that at the end will choose the name completely in lower case and singular: `blog` for the replacement)_:
 
-```
+```properties
 node tools/update-script.js -r Blogs
 ```
 
@@ -347,7 +347,7 @@ is replaced by
 
 Then the `OUTPUT_NEU_NAME` folder will be created, and following the example would be `OUTPUT_Blogs`, and we can proceed to install the dependencies and run the application in this folder:
 
-```
+```properties
 cd OUTPUT_Blogs
 npm install
 npm run dev
@@ -363,7 +363,7 @@ http://localhost:3003/api/users
 
 If you prefere `Visual Studio Code` (vscode):
 
-```
+```properties
 code .
 ```
 
@@ -371,7 +371,7 @@ code .
 
 _In this project `npm` has been used as package manager, but you are free to use another package manager such as `pnpm` because of its popularity and speed._
 
-```
+```properties
 npm install
 npm start
 ```
@@ -384,7 +384,7 @@ npm start
 
 To install mongoDB y the local computer. With windows the instruction are [here](https://www.mongodb.com/try/download/community) and to mac I will use [Homebrew](https://brew.sh/):
 
-```
+```properties
 brew tap mongodb/brew
 brew install mongodb-community
 ```
@@ -425,7 +425,7 @@ The view displays the _MongoDB URI_, which is the address of the database that w
 
 The address looks like this:
 
-```
+```properties
 mongodb+srv://username:<password>@cluster0.kqnrdup.mongodb.net/?retryWrites=true&w=majority
 ```
 
@@ -437,7 +437,7 @@ _Section is pending_
 
 ### Create .env configuration file
 
-```
+```properties
 MONGODB_URI='mongodb://localhost/prototype=test'
 
 TEST_MONGODB_URI='mongodb://localhost/test-prototype=test'
@@ -451,7 +451,7 @@ _You are free to register at [mongoDB Atlas](https://www.mongodb.com/atlas/datab
 
 ### Execute in dev:
 
-```
+```properties
 npm run dev
 ```
 
@@ -523,7 +523,7 @@ _About the use of .rest files and REST Clients, the follow [section](https://git
 
 In the [tests](tests) folder there are several `tests` that can be run automatically with the following command:
 
-```
+```properties
 npm test
 ```
 
