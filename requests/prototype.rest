@@ -1,6 +1,6 @@
 ###
 # Get all prototypes with success (not need token)
-GET http://localhost:3003/api/prototypes
+GET http://localhost:3003/api/prototypes/6501d908459ef53f046fe9e5
 
 ###
 # Login with success to get token
@@ -16,11 +16,10 @@ Content-Type: application/json
 # Create a prototype with success (token provided)
 POST http://localhost:3003/api/prototypes
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvb3QiLCJpZCI6IjY0ZmY5NjUzNmU1NjFkOTg2MDkyYWY1ZiIsImlhdCI6MTY5NDQ3MjA2MX0.pcBkU-C2mopwEoBsqnsv6zl5bOLBCeJmfAZQ3_HHABw
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvb3QiLCJpZCI6IjY1MDFkODliNDU5ZTBmNWYwNDZmZTlkNSIsImlhdCI6MTY5NDY1NTg0MH0.P01mlkFs5w2xln0d00F_FZHoxMYQUz-mMZyQX1g7pkw
 
 {
-  "title": "Fugas o la ansiedad de sentirse vivo",
-  "userId": "64fed2923a2063db2c03bbc7"
+  "title": "Fugas o la ansiedad de sentirse vivo"
 }
 
 ###

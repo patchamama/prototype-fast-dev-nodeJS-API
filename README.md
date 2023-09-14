@@ -331,19 +331,27 @@ Blogs
 
 Additionally all references to `prototype` will be replaced by `blog`, for example in the app.js file:
 
-`const prototypesRouter = require('./controllers/prototypeController')`
+```javascript
+const prototypesRouter = require('./controllers/prototypeController')
+```
 
 is replaced by
 
-`const blogsRouter = require('./controllers/blogController')`
+```javascript
+const blogsRouter = require('./controllers/blogController')
+```
 
 and
 
-`app.use('/api/prototypes', prototypesRouter)`
+```javascript
+app.use('/api/prototypes', prototypesRouter)
+```
 
 is replaced by
 
-`app.use('/api/blogs', blogsRouter)`
+```javascript
+app.use('/api/blogs', blogsRouter)
+```
 
 Then the `OUTPUT_NEU_NAME` folder will be created, and following the example would be `OUTPUT_Blogs`, and we can proceed to install the dependencies and run the application in this folder:
 
