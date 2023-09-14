@@ -6,6 +6,8 @@ _Aiming to provide a project structure in nodeJS following good practices to ach
 
 The live API link can be found, to users [here](https://prototype-fast-dev-nodejs-api-example.onrender.com/api/users) and prototypes [here](https://prototype-fast-dev-nodejs-api-example.onrender.com/api/prototypes)
 
+Examples: [Reading-list-fullstack](https://github.com/patchamama/Reading-list-fullstack)
+
 # Objective
 
 Inspired by the [Agile philosophy](https://en.wikipedia.org/wiki/Agile_software_development) for rapid development and production of software, the following project wants to take a small step with several programmed functionalities to provide an API from a very basic model that can be modified and scaled quickly and that includes authentication with tokens, testing and requests (REST). These functionalities can save hours and money in the process of integrating libraries and their validation.
