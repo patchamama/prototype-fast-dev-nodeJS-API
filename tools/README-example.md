@@ -1,4 +1,4 @@
-## Reading list fullstack (nodeJS, express, React)
+## Reading list fullstack (nodeJS, express, React)
 
 _Example of README.md files to be used as template_
 
@@ -12,7 +12,57 @@ For example; Love Running is a site that hopes to help keep people motivated to 
 
 ![Responsice Mockup](https://github.com/lucyrush/readme-template/blob/master/media/love_running_mockup.png)
 
-## Table of contents
+## Table of contents
+
+- [Reading list fullstack (nodeJS, express, React)](#reading-list-fullstack--nodejs--express--react-)
+- [Table of contents](#table-of-contents)
+- [User Experience (UX)](#user-experience--ux-)
+  - [User Stories](#user-stories)
+  - [Agile Methodology](#agile-methodology)
+  - [Entity Relationship Diagram](#entity-relationship-diagram)
+  - [Database](#database)
+  - [Models](#models)
+- [Design](#design)
+  - [Wireframes](#wireframes)
+  - [Desktop](#desktop)
+  - [Mobile](#mobile)
+  - [Color scheme](#color-scheme)
+  - [Security Features and Defensive Design](#security-features-and-defensive-design)
+  - [Form Validation](#form-validation)
+  - [Images](#images)
+  - [Tipography](#tipography)
+- [Features](#features)
+  - [Existing Features](#existing-features)
+  - [Features Left to Implement](#features-left-to-implement)
+  - [Some reusable components](#some-reusable-components)
+- [Testing](#testing)
+  - [Validator Testing](#validator-testing)
+  - [Unfixed Bugs](#unfixed-bugs)
+- [Deployment](#deployment)
+  - [Content](#content)
+  - [Media](#media)
+- [Bugs](#bugs)
+- [Pending](#pending)
+- [Technologies Used](#technologies-used)
+  - [Languages](#languages)
+  - [Libraries and Frameworks](#libraries-and-frameworks)
+    - [As a development dependency](#as-a-development-dependency)
+  - [Other Tools](#other-tools)
+- [Development](#development)
+  - [GitHub](#github)
+    - [Fork a repository](#fork-a-repository)
+    - [Clone the repository](#clone-the-repository)
+  - [Open a IDE of your preference in the terminal](#open-a-ide-of-your-preference-in-the-terminal)
+  - [Install the dependencies](#install-the-dependencies)
+  - [Create and configure database](#create-and-configure-database)
+    - [MongoDB](#mongodb)
+      - [Local in the computer](#local-in-the-computer)
+- [Deploy](#deploy)
+- [Contribution](#contribution)
+- [Other General Project Advice](#other-general-project-advice)
+- [Credits](#credits)
+- [Acknowledgments](#acknowledgments)
+- [Extra references to create the README file](#extra-references-to-create-the-readme-file)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
@@ -40,7 +90,7 @@ For example; Love Running is a site that hopes to help keep people motivated to 
 
 Colour palette from [Coolors](https://coolors.co/)
 
-### Security Features and Defensive Design
+### Security Features and Defensive Design
 
 ### Form Validation
 
@@ -244,7 +294,7 @@ Finally, type `brew services start mongodb-community` into your terminal. This i
 
 To stop running the Mongo server, enter the command `brew services stop mongodb-community` in your terminal.
 
-## Deploy
+## Deploy
 
 ## Contribution
 
@@ -285,3 +335,10 @@ You can break the credits section up into Content and Media, depending on what y
 - https://stackoverflow.com/questions/26587527/cite-a-paper-using-github-markdown-syntax
 - https://www.markdownguide.org/basic-syntax/
 - [Create ebook from markdown file with pandoc](https://pandoc.org/epub.html), examples and more details [here](https://medium.com/@sebahaeusler/how-to-epub-from-markdown-188fef880fbb)
+- Create table of contents: http://ecotrust-canada.github.io/markdown-toc/
+- Colour palette from [Coolors](https://coolors.co/)
+- The sample images used are from: https://www.pexels.com/
+- The logo was created by https://Logo.com
+- Menu Icons and sections are from: https://fontawesome.com/
+- The fonts used are from google font (Lora & Montserrat) as can be seen in the source code: https://fonts.google.com/
+- To the html and css formater was using: https://codebeautify.org/
