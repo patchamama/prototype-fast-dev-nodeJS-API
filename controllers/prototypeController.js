@@ -29,11 +29,15 @@ router.get('/:id', async (request, response) => {
 // post a new prototype to the database and add it to the user's list of prototypes
 // Only logged in users can post prototypes
 router.post('/', userExtractor, async (request, response) => {
-  const body = request.body
-  const prototype = new Prototype({
-    body,
-    // Add new fields to be updated here
-  })
+  // Option more secure way to get the title (or other field) from the request body
+  // const { title } = request.body
+  // const prototype = new Prototype({
+  //   title,
+  //   // Add new fields to be updated here
+  // })
+
+  // Generalize the above code to handle all fields in the request body
+  const prototype = new Prototype(request.body)
 
   const user = request.user
   // only logged in users can post prototypes
