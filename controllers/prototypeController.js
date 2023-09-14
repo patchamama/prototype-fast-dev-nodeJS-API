@@ -16,12 +16,22 @@ router.get('/', async (request, response) => {
   response.json(prototypes)
 })
 
+// get a single prototype
+router.get('/:id', async (request, response) => {
+  const prototype = await Prototype.findById(request.params.id)
+  if (prototype) {
+    response.json(prototype)
+  } else {
+    response.status(404).end()
+  }
+})
+
 // post a new prototype to the database and add it to the user's list of prototypes
 // Only logged in users can post prototypes
 router.post('/', userExtractor, async (request, response) => {
-  const { title } = request.body
+  const body = request.body
   const prototype = new Prototype({
-    title,
+    body,
     // Add new fields to be updated here
   })
 

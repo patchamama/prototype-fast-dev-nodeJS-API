@@ -42,6 +42,16 @@ router.get('/', async (request, response) => {
   response.json(convertedData)
 })
 
+// get a single prototype
+router.get('/:id', async (request, response) => {
+  const book = await Book.findById(request.params.id)
+  if (book) {
+    response.json(book)
+  } else {
+    response.status(404).end()
+  }
+})
+
 // post a new book to the database and add it to the user's list of books
 // Only logged in users can post books
 router.post('/', userExtractor, async (request, response) => {
