@@ -18,7 +18,13 @@ router.get('/', async (request, response) => {
 
 // get a single prototype
 router.get('/:id', async (request, response) => {
-  const prototype = await Prototype.findById(request.params.id)
+  const prototype = await Prototype.findById(request.params.id).populate(
+    'user',
+    {
+      // username: 1,
+      // name: 1,
+    }
+  )
   if (prototype) {
     response.json(prototype)
   } else {
