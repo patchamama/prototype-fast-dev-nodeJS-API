@@ -18,14 +18,14 @@ If you don't want to read all the documentation (as part of an agile development
 
 1. [Clone the project](#clone-the-repository) and [install dependencies](#install-the-dependencies),
 2. [Create the .env configuration file](#create-env-configuration-file),
-3. Modify [controllers/prototypeControllers.js](controllers/prototypeControllers.js) and [models/prototype.js](models/prototype.js) to insert new fields or modify the existing ones,
-4. [Run the application](#execute-in-dev-).
+3. Modify [controllers/prototypeControllers.js](controllers/prototypeControllers.js) and [models/prototype.js](models/prototype.js) to insert new fields or modify the existing ones. Also this process can be done automatically with the [script to customize the app](#execute-script-to-customize-the-app-optional),
+4. [Run the application](#execute-in-dev).
 
 _See [pending](#pending) and [commits](https://github.com/patchamama/prototype-fast-dev-nodeJS-API/commits/main) section for latest updates if you want to do contributions [(PR)](https://github.com/patchamama/prototype-fast-dev-nodeJS-API/pulls)._
 
 # Table of contents
 
-- [Prototype of nodeJS API (backend) to a fast develop](#prototype-of-nodejs-api--backend--to-a-fast-develop)
+- [Prototype of nodeJS API (backend) to a fast develop](#prototype-of-nodejs-api-backend-to-a-fast-develop)
 - [Objective](#objective)
 - [Quick summary and staging](#quick-summary-and-staging)
 - [App structure](#app-structure)
@@ -55,7 +55,7 @@ _See [pending](#pending) and [commits](https://github.com/patchamama/prototype-f
     - [Fork a repository](#fork-a-repository)
     - [Clone the repository](#clone-the-repository)
   - [Local computer](#local-computer)
-    - [Execute script to customize the app (optional)](#execute-script-to-customize-the-app--optional-)
+    - [Execute script to customize the app (optional)](#execute-script-to-customize-the-app-optional)
     - [Open the IDE of your preference in the terminal](#open-the-ide-of-your-preference-in-the-terminal)
     - [Install the dependencies](#install-the-dependencies)
     - [Create and configure database](#create-and-configure-database)
@@ -64,7 +64,7 @@ _See [pending](#pending) and [commits](https://github.com/patchamama/prototype-f
         - [MongoDB atlas as remote](#mongodb-atlas-as-remote)
       - [sqlite](#sqlite)
     - [Create .env configuration file](#create-env-configuration-file)
-    - [Execute in dev:](#execute-in-dev-)
+    - [Execute in dev:](#execute-in-dev)
     - [Open the browser on the port 3003](#open-the-browser-on-the-port-3003)
   - [Adding users](#adding-users)
   - [Customise the prototype model](#customise-the-prototype-model)
