@@ -16,6 +16,12 @@ const prototypesRouter = require('./controllers/prototypeController')
 const usersRouter = require('./controllers/userController')
 const loginRouter = require('./controllers/loginController')
 
+// testing controller
+if (process.env.NODE_ENV === 'test') {
+  const testingRouter = require('./controllers/testingController')
+  app.use('/api/testing', testingRouter)
+}
+
 // mongoose set strictQuery to false to allow for querying by id
 mongoose.set('strictQuery', false)
 
