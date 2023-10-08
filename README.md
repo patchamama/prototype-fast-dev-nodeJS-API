@@ -23,7 +23,9 @@ If you don't want to read all the documentation (as part of an agile development
 
 _See [pending](#pending) and [commits](https://github.com/patchamama/prototype-fast-dev-nodeJS-API/commits/main) section for latest updates if you want to do contributions [(PR)](https://github.com/patchamama/prototype-fast-dev-nodeJS-API/pulls)._
 
-# Table of contents
+<details>
+
+<summary>Table of contents</summary>
 
 - [Prototype of nodeJS API (backend) to a fast develop](#prototype-of-nodejs-api-backend-to-a-fast-develop)
 - [Objective](#objective)
@@ -81,6 +83,8 @@ _See [pending](#pending) and [commits](https://github.com/patchamama/prototype-f
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
+</details>
+  
 # App structure
 
 <pre>
