@@ -217,6 +217,7 @@ No errors have been found or reported.
 - Generate a admin panel with a frontend (react, vanillaJS, jquery) that emulates the same functionalities as the _[Django REST Framework](https://www.django-rest-framework.org/) API Control Panel_ and facilitates the management of models and API behaviour from a web interface.
 - Generate a web interface in the frontend that facilitates the creation of models and controllers.
 - ~~Use morgan to extends the Express Rest API’s logging capabilities.~~ See commit [here](https://github.com/patchamama/prototype-fast-dev-nodeJS-API/commit/eda4cf97c424863eff724de1823b545d7d8244af)
+- Check and integrate functionalities to create different directories structures (see https://github.com/patchamama/node-config)
 
 # Technologies Used
 
