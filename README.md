@@ -2,7 +2,7 @@
 
 **DRY (don't repeat yourself)**
 
-_Aiming to provide a project structure in nodeJS following good practices to achieve a fast development of an API to achieve its deploy._
+_Aiming to provide a project structure in nodeJS following good practices to achieve a fast development of an API to achieve its deployment._
 
 The live API link can be found, to users [here](https://prototype-fast-dev-nodejs-api-example.onrender.com/api/users) and prototypes [here](https://prototype-fast-dev-nodejs-api-example.onrender.com/api/prototypes)
 
@@ -18,7 +18,7 @@ If you don't want to read all the documentation (as part of an agile development
 
 1. [Clone the project](#clone-the-repository) and [install dependencies](#install-the-dependencies),
 2. [Create the .env configuration file](#create-env-configuration-file),
-3. Modify [controllers/prototypeControllers.js](controllers/prototypeControllers.js) and [models/prototype.js](models/prototype.js) to insert new fields or modify the existing ones. Also this process can be done automatically with the [script to customize the app](#execute-script-to-customize-the-app-optional),
+3. Modify [controllers/prototypeControllers.js](controllers/prototypeControllers.js) and [models/prototype.js](models/prototype.js) to insert new fields or modify the existing ones. Also, this process can be done automatically with the [script to customize the app](#execute-script-to-customize-the-app-optional),
 4. [Run the application](#execute-in-dev).
 
 _See [pending](#pending) and [commits](https://github.com/patchamama/prototype-fast-dev-nodeJS-API/commits/main) section for latest updates if you want to do contributions [(PR)](https://github.com/patchamama/prototype-fast-dev-nodeJS-API/pulls)._
@@ -112,7 +112,7 @@ utils
   middleware.js  
 </pre>
 
-_\* Files to be modified as base to adapt them to new needs._
+_\* Files to be modified as a base to adapt them to new needs._
 
 # Features
 
@@ -144,7 +144,7 @@ The "controllers" directory contains the controller functions responsible for ha
 
 - `loginController.js`: This file houses controller functions responsible for user authentication and login processes. It handles user login requests, verifies user credentials, and issues authentication tokens when users successfully log in.
 
-These controllers collectively manage different aspects of our application, ensuring that user-related actions, blog post operations, and authentication processes are handled efficiently and in accordance with our business logic.
+These controllers collectively manage different aspects of our application, ensuring that user-related actions, blog post operations, and authentication processes are handled efficiently and by our business logic.
 
 If you'd like to contribute or make enhancements to any of these controllers, please ensure that your changes align with the application's business logic and follow best practices for structuring controller functions.
 
@@ -186,7 +186,7 @@ _This command will execute the test suites defined in the "tests" directory and 
 
 ![Tets results](docs/tests-results.png)
 
-The tests use the `supertest` library to simulate HTTP requests to the login controller and Jest for assertions, and also are execute in a test database to ensure that the tests run in an isolated enviroment.
+The tests use the `supertest` library to simulate HTTP requests to the login controller and Jest for assertions and also are executed in a test database to ensure that the tests run in an isolated environment.
 
 ## Utils
 
@@ -196,7 +196,7 @@ The "utils" directory contains utility functions and modules used throughout our
 
 - `config.js`: This config file is used to configure various settings for your Node.js application, such as the port to run the server on, the MongoDB URI based on the environment (development or test), and a secret key for authentication. It loads environment variables from a .env file using the dotenv package and provides these values to the rest of your application as needed.
 
-- `logger.js`: This file provides two functions, info and error, for logging information and errors respectively. It checks the NODE_ENV environment variable to determine whether to log messages. Messages are only logged if the environment is not set to 'test,' which is a common practice to prevent logging in test environments where you want to keep the output clean.
+- `logger.js`: This file provides two functions, info, and error, for logging information and errors respectively. It checks the NODE_ENV environment variable to determine whether to log messages. Messages are only logged if the environment is not set to 'test,' which is a common practice to prevent logging in test environments where you want to keep the output clean.
 
 - `middleware.js`: This middlewares.js file defines several middleware functions for your Node.js application, including handling unknown endpoints, error handling, token extraction, and user extraction from a JSON Web Token (JWT). These middlewares are used to enhance the functionality and security of your application.
 
@@ -214,10 +214,10 @@ No errors have been found or reported.
 
 - Add use of ~~[mongoDB](https://github.com/patchamama/prototype-fast-dev-nodeJS-API/commit/9a2baeacf56776e96bb8dcfec63fb3559fbcc89e)~~ and sqlite databases locally for development mode.
 - ~~Generate script (bash and batch) that automates the renaming of files and content to replace `prototype` with a new desired name in the model and controller, as well as the API URL (router).~~ See commit [here](https://github.com/patchamama/prototype-fast-dev-nodeJS-API/commit/5dd21676361876944e2d15bd7a503df0d26fb309)
-- Generate a admin panel with a frontend (react, vanillaJS, jquery) that emulates the same functionalities as the _[Django REST Framework](https://www.django-rest-framework.org/) API Control Panel_ and facilitates the management of models and API behaviour from a web interface.
-- Generate a web interface in the frontend that facilitates the creation of models and controllers.
-- ~~Use morgan to extends the Express Rest API’s logging capabilities.~~ See commit [here](https://github.com/patchamama/prototype-fast-dev-nodeJS-API/commit/eda4cf97c424863eff724de1823b545d7d8244af)
-- Check and integrate functionalities to create different directories structures (see https://github.com/patchamama/node-config)
+- Generate an admin panel with a frontend (react, vanillaJS, jquery) that emulates the same functionalities as the _[Django REST Framework](https://www.django-rest-framework.org/) API Control Panel_ and facilitates the management of models and API behavior from a web interface.
+- Generate a web interface in the front end that facilitates the creation of models and controllers.
+- ~~Use morgan to extend the Express Rest API’s logging capabilities.~~ See commit [here](https://github.com/patchamama/prototype-fast-dev-nodeJS-API/commit/eda4cf97c424863eff724de1823b545d7d8244af)
+- Check and integrate functionalities to create different directory structures (see https://github.com/patchamama/node-config)
 
 # Technologies Used
 
@@ -281,7 +281,7 @@ In GitHub, you have the option to create a local copy (clone) of your repository
 
 ![GitHub Clone](docs/deploy-github-clone.png)
 
-_If you use a online dev IDE integrated in github as gitpod or codeanywhere, you can click on it and open the IDE to do changes_
+_If you use an online dev IDE integrated in GitHub as gitpod or codeanywhere, you can click on it and open the IDE to make changes_
 
 4. On your computer, open **Terminal**.
 5. Navigate to the directory of choice (`cd <path-of-dev>`).
@@ -298,7 +298,7 @@ _(if you prefere a online IDE as gitpod or codeanywhere you can open it and open
 node tools/update-script.js -r NEW_NAME
 ```
 
-_This script replaces in the filename and in the content (controller, model, routing) the text `prototype` with the `NEW_NAME`, allowing a quick adaptation of the script to new needs._
+_This script replaces in the filename and the content (controller, model, routing) the text `prototype` with the `NEW_NAME`, allowing a quick adaptation of the script to new needs._
 
 For example, if we specify in the `-r Blogs` parameter _(you can put Blogs, blogs, blog, or Blog that at the end will choose the name completely in lower case and singular: `blog` for the replacement)_:
 
@@ -306,7 +306,7 @@ For example, if we specify in the `-r Blogs` parameter _(you can put Blogs, blog
 node tools/update-script.js -r Blogs
 ```
 
-This would create the folder with contents:
+This would create the folder with the contents:
 
 <pre>
 Blogs 
@@ -374,7 +374,7 @@ http://localhost:3003/api/users
 
 ### Open the IDE of your preference in the terminal
 
-If you prefere `Visual Studio Code` (vscode):
+If you prefer `Visual Studio Code` (vscode):
 
 ```properties
 code .
@@ -382,7 +382,7 @@ code .
 
 ### Install the dependencies
 
-_In this project `npm` has been used as package manager, but you are free to use another package manager such as `pnpm` because of its popularity and speed._
+_In this project `npm` has been used as a package manager, but you are free to use another package manager such as `pnpm` because of its popularity and speed._
 
 ```properties
 npm install
@@ -402,13 +402,13 @@ brew tap mongodb/brew
 brew install mongodb-community
 ```
 
-Finally, type `brew services start mongodb-community` into your terminal. This is what actually starts up the Mongo server. **You’ll need to have the Mongo server running any time you want to interact with your database, view your myFlix app, or use the Mongo shell**.
+Finally, type `brew services start mongodb-community` into your terminal. This is what starts up the Mongo server. **You’ll need to have the Mongo server running any time you want to interact with your database, view your myFlix app, or use the Mongo shell**.
 
 To stop running the Mongo server, enter the command `brew services stop mongodb-community` in your terminal.
 
 ##### MongoDB atlas as remote
 
-Loggin and create account of [MongoDB Atlas](https://www.mongodb.com/atlas/database)
+Login and create an account of [MongoDB Atlas](https://www.mongodb.com/atlas/database)
 
 ![Mongodb create](docs/mongodb-welcome.png)
 
@@ -418,7 +418,7 @@ Once you've created and logged into your account of [MongoDB Atlas](https://www.
 
 Let's wait for the cluster to be ready for use. This can take some minutes.
 
-NB do not continue before the cluster is ready.
+NB does not continue before the cluster is ready.
 
 Let's use the _security_ tab for creating user credentials for the database. Please note that these are not the same credentials you use for logging into MongoDB Atlas. These will be used for your application to connect to the database.
 
@@ -500,7 +500,7 @@ _Modify the prototype to change the example field `title` and/or add new fields.
 
 ## Customise the prototype controller (manual)
 
-_Manage the behaviour of data insertions (post) and updates (put) in the api. To do this, the [controllers/prototypeController.js](controllers/prototypeController.js) file must be modified._
+_Manage the behavior of data insertions (post) and updates (put) in the API. To do this, the [controllers/prototypeController.js](controllers/prototypeController.js) file must be modified._
 
 ## Modify routing
 
@@ -526,11 +526,11 @@ I would recommend (if you want to change to `blog` for example):
 - `Prototype` to `Blog`
 - `prototype` to `blog`
 
-## Perform CRUD operations after modified the prototype
+## Perform CRUD operations after modifying the prototype
 
 The file [requests/prototype.rest](requests/prototype.rest) can be used as a basis for performing CRUD operations on the modified model based on the controller operations (which must also be modified).
 
-_About the use of .rest files and REST Clients, the follow [section](https://github.com/patchamama/prototype-fast-dev-nodeJS-API#adding-users) can help._
+_About the use of .rest files and REST Clients, the following [section](https://github.com/patchamama/prototype-fast-dev-nodeJS-API#adding-users) can help._
 
 # Testing
 
@@ -544,9 +544,9 @@ Note that you will have to modify the tests in `prototype.test.js` to adapt them
 
 # Deploy
 
-At the moment as Render can be used without a credit card was selected. Render might be a bit easier to use since it does not require any software to be installed on your machine.
+At the moment Render can be used without a credit card selected. Render might be a bit easier to use since it does not require any software to be installed on your machine.
 
-The following assumes that the [sign in](https://dashboard.render.com/) has been made with a GitHub account.
+The following assumes that the [sign-in](https://dashboard.render.com/) has been made with a GitHub account.
 
 After signing in, let us create a new "web service":
 
@@ -559,13 +559,13 @@ The app repository is then connected to Render:
 
 The connecting seem to require that the app repository is public.
 
-Next we will define the basic configurations. If the app is _not_ at the root of the repository the _Root directory_ needs to be given a proper value:
+Next, we will define the basic configurations. If the app is _not_ at the root of the repository the _Root directory_ needs to be given a proper value:
 
 ![Render configuration](docs/render-config.png)
 
 Select `Create webservice`
 
-Configurate the enviroment with the keys parameters (see the .env file) to define de database conection and secret key.
+Configure the environment with the key parameters (see the .env file) to define de database connection and secret key.
 
 ![Render enviroment](docs/render-enviroment.png)
 
@@ -573,7 +573,7 @@ After this, the app starts up in the Render. The dashboard tells us the app stat
 
 ![Render deploy runnint](docs/render-deploy-running.png)
 
-According to the [documentation](https://render.com/docs/deploys) every commit to GitHub should redeploy the app. For some reason this is not always working. Fortunately it is also possible to manually redeploy the app.
+According to the [documentation](https://render.com/docs/deploys) every commit to GitHub should redeploy the app. For some reason, this is not always working. Fortunately, it is also possible to manually redeploy the app.
 
 _The section of [deploying app to internet](https://fullstackopen.com/en/part3/deploying_app_to_internet) of [fullstackopen.com](fullstackopen.com) was used as base to generate this section._
 
@@ -589,11 +589,11 @@ If you wish to contribute or make changes to existing models or controllers, ens
 - [Mongoose search methods](https://mongoosejs.com/docs/api/model.html)
 - [Mongoose validation](https://mongoosejs.com/docs/validation.html)
 - [Mongoose unique validator](https://github.com/blakehaswell/mongoose-unique-validator)
-- [Mongoose join with the populate method](http://mongoosejs.com/docs/populate.html)
+- [Mongoose joins with the populate method](http://mongoosejs.com/docs/populate.html)
 - [Express error handlers](https://expressjs.com/en/guide/error-handling.html)
 - [Express router reference](http://expressjs.com/en/api.html#router)
 - [Express Admin](https://github.com/simov/express-admin) is a MySQL, MariaDB, PostgreSQL, SQLite admin panel for Node.js.
-- [AdminJS](https://github.com/SoftwareBrothers/adminjs) is an automatic admin interface that can be plugged into your application. You, as a developer, provide database models (like posts, comments, stores, products or whatever else your application uses), and AdminJS generates UI which allows you (or other trusted users) to manage content. Inspired by: django admin, rails admin and active admin.
+- [AdminJS](https://github.com/SoftwareBrothers/adminjs) is an automatic admin interface that can be plugged into your application. You, as a developer, provide database models (like posts, comments, stores, products, or whatever else your application uses), and AdminJS generates UI which allows you (or other trusted users) to manage content. Inspired by: Django admin, rails admin, and active admin.
 - [Best](https://dev.to/nermineslimane/always-separate-app-and-server-files--1nc7) [practices](https://nodejsbestpractices.com/sections/projectstructre/separateexpress) references.
 - Functional Javascript series on [YouTube](https://www.youtube.com/watch?v=BMUiFMZr7vk&list=PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-n84)
 
