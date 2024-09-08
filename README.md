@@ -194,7 +194,7 @@ The "utils" directory contains utility functions and modules used throughout our
 
 ### Directory Structure
 
-- `config.js`: This config file is used to configure various settings for your Node.js application, such as the port to run the server on, the MongoDB URI based on the environment (development or test), and a secret key for authentication. It loads environment variables from a .env file using the dotenv package and provides these values to the rest of your application as needed.
+- `config.js`: This config file is used to configure various settings for your Node.js application, such as the port to run the server on, the MongoDB URI based on the environment (development or test), and a secret key for authentication. It loads environment variables from a .env file using the `dotenv` package and provides these values to the rest of your application as needed.
 
 - `logger.js`: This file provides two functions, info, and error, for logging information and errors respectively. It checks the NODE_ENV environment variable to determine whether to log messages. Messages are only logged if the environment is not set to 'test,' which is a common practice to prevent logging in test environments where you want to keep the output clean.
 
@@ -281,7 +281,7 @@ In GitHub, you have the option to create a local copy (clone) of your repository
 
 ![GitHub Clone](docs/deploy-github-clone.png)
 
-_If you use an online dev IDE integrated in GitHub as gitpod or codeanywhere, you can click on it and open the IDE to make changes_
+_If you use an online dev IDE integrated into GitHub as gitpod or codeanywhere, you can click on it and open the IDE to make changes_
 
 4. On your computer, open **Terminal**.
 5. Navigate to the directory of choice (`cd <path-of-dev>`).
@@ -460,7 +460,7 @@ SECRET='your-secret-key-for-testing-purposes-only'
 PORT=3003
 ```
 
-_You are free to register at [mongoDB Atlas](https://www.mongodb.com/atlas/database) and paste the login URL provided after creating the username and password is you want to use a remote access or to deploy._
+_You are free to register at [mongoDB Atlas](https://www.mongodb.com/atlas/database) and paste the login URL provided after creating the username and password if you want to use a remote access or to deploy._
 
 ### Execute in dev:
 
@@ -557,7 +557,7 @@ The app repository is then connected to Render:
 ![Render select github](docs/render-select-github.png)
 ![Render select repository](docs/render-select-repo.png)
 
-The connecting seem to require that the app repository is public.
+The connecting seems to require that the app repository is public.
 
 Next, we will define the basic configurations. If the app is _not_ at the root of the repository the _Root directory_ needs to be given a proper value:
 
@@ -569,7 +569,7 @@ Configure the environment with the key parameters (see the .env file) to define 
 
 ![Render enviroment](docs/render-enviroment.png)
 
-After this, the app starts up in the Render. The dashboard tells us the app state and the url where the app is running:
+After this, the app starts up in the Render. The dashboard tells us the app state and the URL where the app is running:
 
 ![Render deploy runnint](docs/render-deploy-running.png)
 
